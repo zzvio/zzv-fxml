@@ -1,0 +1,5 @@
+Package: zzv-view
+Version: 1.0
+Architecture: amd64
+Maintainer: Hash Token United
+Description: The first testing version of the ZZV application - the start of ZZV distributed client development

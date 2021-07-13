@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
+
+  <Identity Name="htu.zzv-view"
+            ProcessorArchitecture="x64"
+            Publisher="CN=9D4E771A-DF08-4723-BF84-14412311A5B3"
+            Version="VersionPlaceholder"
+  />
+
+  <Properties>
+    <DisplayName>Zzv-view</DisplayName>
+    <Description>ZZV-View application</Description>
+    <Logo>img/zzv_50_x_50.png</Logo>
+    <PublisherDisplayName>Hash Token United</PublisherDisplayName>
+  </Properties>
+
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="ZZV" Executable="Zzv-view.exe" EntryPoint="App.App">
+      <uap:VisualElements DisplayName="ZZV-View application"
+                      Description="ZZV package!"
+                      BackgroundColor="#AA00AA"
+                      Square150x150Logo="img/zzv_150_x_150.png"
+                      Square44x44Logo="img/zzv_44_x_44.png">
+        <uap:DefaultTile Wide310x150Logo="img/zzv_310_x_150.png" />
+        <uap:SplashScreen Image="img/zzv_620_x_300.png" />
+      </uap:VisualElements>
+    </Application>
+
+  </Applications>
+<Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0"/>
+</Dependencies>
+
+</Package>

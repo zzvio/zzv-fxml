@@ -1,0 +1,40 @@
+name: Windows
+
+on:
+  push:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, Windows, X64]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gluon Build
+        run: mvn -Pdesktop gluonfx:build gluonfx:package
+
+      # - name: Setup Windows Cert
+      #   id: windows_cert_file
+      #   uses: timheuer/base64-to-file@v1
+      #   with:
+      #     fileName: 'cert.pfx'
+      #     encodedString: ${{ secrets.GLUON_WINDOWS_CERT_BASE64 }}
+
+      # - name: Build Package
+      #   env: 
+      #     CERT_FILE: ${{ steps.windows_cert_file.outputs.filePath }}
+      #     CERT_PASSWORD: ${{ secrets.GLUON_WINDOWS_CERT_PASSWORD }}
+      #   run: src/win/build.ps1
+      #   shell: powershell
+
+      - name: Make staging directory
+        run: mkdir staging
+
+      - name: Copy Package to staging
+        run: cp -r target/gluonfx/x86_64-windows/semux-core.exe staging
+      
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging

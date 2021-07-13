@@ -1,0 +1,26 @@
+{
+  "resources":{
+  "includes":[
+    {"pattern":"\\QMETA-INF/native/linux64/libleveldbjni.so\\E"}, 
+    {"pattern":"\\QMETA-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.apache.logging.log4j.core.util.ContextDataProvider\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.apache.logging.log4j.spi.Provider\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.apache.logging.log4j.util.PropertySource\\E"}, 
+    {"pattern":"\\Qcom/gluonhq/charm/glisten/G_Blue_500_58x58.png\\E"}, 
+    {"pattern":"\\Qcom/gluonhq/charm/glisten/control/glisten.css\\E"}, 
+    {"pattern":"\\Qcom/gluonhq/charm/glisten/control/swatch_blue.css\\E"}, 
+    {"pattern":"\\Qcom/gluonhq/charm/glisten/control/swatch_light_green.css\\E"}, 
+    {"pattern":"\\Qcom/gluonhq/charm/glisten/control/theme_light.css\\E"}, 
+    {"pattern":"\\Qcom/mycompany/sample/styles.css\\E"}, 
+    {"pattern":"\\Qgenesis/mainnet.json\\E"}, 
+    {"pattern":"\\Qlog4j2.xml\\E"}, 
+    {"pattern":"\\Qorg/fusesource/leveldbjni/version.txt\\E"}, 
+    {"pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"}, 
+    {"pattern":"\\Qorg/xerial/snappy/VERSION\\E"}, 
+    {"pattern":"\\Qorg/xerial/snappy/native/Linux/x86_64/libsnappyjava.so\\E"}
+  ]},
+  "bundles":[
+    {"name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle"}, 
+    {"name":"org/semux/cli/messages"}
+  ]
+}
