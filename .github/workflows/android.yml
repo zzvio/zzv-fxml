@@ -10,12 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Gluon's GraalVM
-        uses: gluonhq/setup-graalvm@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: DeLaGuardo/setup-graalvm@4.0
         with:
-          graalvm: '21.3.0-dev-20210713_1945'
+          # GraalVM version, no pattern syntax available atm
+          graalvm: '21.3.0'
 
       - name: Install libraries
         run: sudo apt update; sudo apt install -y maven libasound2-dev libavcodec-dev libavformat-dev libavutil-dev libgl-dev libgtk-3-dev libpango1.0-dev libxtst-dev
