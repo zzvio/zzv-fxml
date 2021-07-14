@@ -1,0 +1,39 @@
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 1"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
+
+jobs: 
+ build:
+  filters:
+    branches:
+      only:
+        - master
+  machine: true
+  steps:
+    - add_ssh_keys:
+        fingerprints:
+          "3f:f2:4b:14:4c:80:c1:c8:26:40:65:01:ff:a5:15:64"
+    - checkout
+    - run:
+        name: Check commit message and build
+        command: |
+          commit_msg=$(git show -s --format=%s)
+          if [[ $commit_msg != *\[COMPILE\]* ]]; then 
+            echo "Pipeline not triggered"; 
+          else 
+            echo "Triggering pipeline"; 
+            cp ~/.ssh/id_rsa_3ff24b144c80c1c826406501ffa51564 .ssh/id_rsa
+            docker build -f Dockerfile.zzv --build-arg CACHE_DATE="$(date)" .;
+          fi

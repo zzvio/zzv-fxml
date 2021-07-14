@@ -1,0 +1,21 @@
+FROM ubuntu:18.04 as main
+RUN apt-get update && apt install git wget rsync -y
+COPY .ssh /root/.ssh
+RUN chmod 600 /root/.ssh/id_rsa* && \ 
+    git config --global user.email "api@zzv.io" && git config --global user.name "API user"
+
+ENV bitbucketDir="/zzv-fxml"
+ENV githubDir="/zzv-fxml-github"
+
+RUN cd /root && \
+    git clone --depth 1 --branch master git@bitbucket.org:zvvio/zzv-fxml.git ${bitbucketDir} && \
+    git clone --depth 1 --branch master git@github.com:zzvio/zzv-fxml.git ${githubDir}
+
+RUN cd $bitbucketDir && \
+    rsync -a . $githubDir --exclude .git --exclude .ssh --delete 
+RUN cd $githubDir && \
+    git add . && \
+    git commit -m "Added new version from pipeline" && \
+    git push
+
+
