@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: zzvio/setup-graalvm@5.1
+      - uses: zzvio/setup-graalvm@5.2
         with:
           graalvm: '21.3.0-dev-20210713_1945'
           java: java11
