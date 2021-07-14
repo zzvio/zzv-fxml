@@ -18,4 +18,3 @@ RUN cd $githubDir && \
     git commit -m "Added new version from pipeline" && \
     git push
 
-
