@@ -1,42 +1,18 @@
 /**
  * Copyright (c) 2017-2020 The Semux Developers
- *
+ * <p>
  * Distributed under the MIT software license, see the accompanying file
  * LICENSE or https://opensource.org/licenses/mit-license.php
  */
 package org.semux;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.logging.Logger;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.bitlet.weupnp.GatewayDevice;
-import org.bitlet.weupnp.GatewayDiscover;
 import org.semux.config.Config;
-import org.semux.config.Constants;
 import org.semux.consensus.SemuxBft;
 import org.semux.consensus.SemuxSync;
-import org.semux.core.BftManager;
-import org.semux.core.Block;
-import org.semux.core.BlockHeader;
-import org.semux.core.Blockchain;
-import org.semux.core.BlockchainImpl;
-import org.semux.core.Genesis;
-import org.semux.core.PendingManager;
-import org.semux.core.SyncManager;
-import org.semux.core.Wallet;
-import org.semux.crypto.Hex;
+import org.semux.core.*;
 import org.semux.crypto.Key;
 import org.semux.db.DatabaseFactory;
 import org.semux.db.DatabaseName;
-import org.semux.db.LeveldbDatabase;
 import org.semux.db.LeveldbDatabase.LeveldbFactory;
 import org.semux.event.KernelBootingEvent;
 import org.semux.event.PubSub;
@@ -48,18 +24,14 @@ import org.semux.net.PeerServer;
 import org.semux.util.Bytes;
 import org.semux.util.TimeUtil;
 import org.semux.vm.client.SemuxBlock;
-// import org.slf4j.Logger;
-// import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
-
 import oshi.SystemInfo;
-import oshi.hardware.CentralProcessor;
-import oshi.hardware.ComputerSystem;
-import oshi.hardware.GlobalMemory;
-import oshi.hardware.HWDiskStore;
-import oshi.hardware.HardwareAbstractionLayer;
-import oshi.hardware.NetworkIF;
+import oshi.hardware.*;
 import oshi.software.os.OperatingSystem;
+
+import java.io.File;
+import java.util.Objects;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Logger;
 
 /**
  * Kernel holds references to each individual components.
@@ -67,11 +39,13 @@ import oshi.software.os.OperatingSystem;
 public class Kernel {
 
     // Fix JNA issue: There is an incompatible JNA native library installed
-    static {
-        System.setProperty("jna.nosys", "true");
-    }
+    // Fix JNA issue: There is an incompatible JNA native library installed
+//    static {
+//        System.setProperty("jna.nosys", "true");
+//        //ours  System.setProperty("jna.noclasspath","true");
+//    }
 
-    private static final Logger logger =  Logger.getLogger(Kernel.class.getName());
+    private static final Logger logger = Logger.getLogger(Kernel.class.getName());
 
     private static final PubSub pubSub = PubSubFactory.getDefault();
 
@@ -105,7 +79,7 @@ public class Kernel {
 
     /**
      * Creates a kernel instance and initializes it.
-     * 
+     *
      * @param config
      *            the config instance
      * @prarm genesis the genesis instance
@@ -216,7 +190,7 @@ public class Kernel {
      * Prints system info.
      */
     protected void printSystemInfo() {
-        if ( true )
+        if (true)
             return;
 
         try {
@@ -263,21 +237,22 @@ public class Kernel {
      * Sets up uPnP port mapping.
      */
     protected void setupUpnp() {
-        try {
-            GatewayDiscover discover = new GatewayDiscover();
-            Map<InetAddress, GatewayDevice> devices = discover.discover();
-            for (Map.Entry<InetAddress, GatewayDevice> entry : devices.entrySet()) {
-                GatewayDevice gw = entry.getValue();
-                logger.info(String.format("Found a gateway device: local address = %s, external address = %s",
-                        gw.getLocalAddress().getHostAddress(), gw.getExternalIPAddress()));
-
-                gw.deletePortMapping(config.p2pListenPort(), "TCP");
-                gw.addPortMapping(config.p2pListenPort(), config.p2pListenPort(), gw.getLocalAddress().getHostAddress(),
-                        "TCP", "Semux P2P network");
-            }
-        } catch (IOException | SAXException | ParserConfigurationException e) {
-            logger.info(String.format("Failed to add port mapping", e));
-        }
+        return;
+//        try {
+//            GatewayDiscover discover = new GatewayDiscover();
+//            Map<InetAddress, GatewayDevice> devices = discover.discover();
+//            for (Map.Entry<InetAddress, GatewayDevice> entry : devices.entrySet()) {
+//                GatewayDevice gw = entry.getValue();
+//                logger.info(String.format("Found a gateway device: local address = %s, external address = %s",
+//                        gw.getLocalAddress().getHostAddress(), gw.getExternalIPAddress()));
+//
+//                gw.deletePortMapping(config.p2pListenPort(), "TCP");
+//                gw.addPortMapping(config.p2pListenPort(), config.p2pListenPort(), gw.getLocalAddress().getHostAddress(),
+//                        "TCP", "Semux P2P network");
+//            }
+//        } catch (IOException | SAXException | ParserConfigurationException e) {
+//            logger.info(String.format("Failed to add port mapping", e));
+//        }
     }
 
     /**
@@ -337,7 +312,7 @@ public class Kernel {
 
     /**
      * Returns the wallet.
-     * 
+     *
      * @return
      */
     public Wallet getWallet() {
@@ -346,7 +321,7 @@ public class Kernel {
 
     /**
      * Returns the coinbase.
-     * 
+     *
      * @return
      */
     public Key getCoinbase() {
@@ -355,7 +330,7 @@ public class Kernel {
 
     /**
      * Returns the blockchain.
-     * 
+     *
      * @return
      */
     public Blockchain getBlockchain() {
@@ -364,7 +339,7 @@ public class Kernel {
 
     /**
      * Returns the peer client.
-     * 
+     *
      * @return
      */
     public PeerClient getClient() {
@@ -373,7 +348,7 @@ public class Kernel {
 
     /**
      * Returns the pending manager.
-     * 
+     *
      * @return
      */
     public PendingManager getPendingManager() {
@@ -382,7 +357,7 @@ public class Kernel {
 
     /**
      * Returns the channel manager.
-     * 
+     *
      * @return
      */
     public ChannelManager getChannelManager() {
@@ -391,7 +366,7 @@ public class Kernel {
 
     /**
      * Returns the node manager.
-     * 
+     *
      * @return
      */
     public NodeManager getNodeManager() {
@@ -400,7 +375,7 @@ public class Kernel {
 
     /**
      * Returns the config.
-     * 
+     *
      * @return
      */
     public Config getConfig() {
@@ -409,7 +384,7 @@ public class Kernel {
 
     /**
      * Returns the syncing manager.
-     * 
+     *
      * @return
      */
     public SyncManager getSyncManager() {
@@ -418,7 +393,7 @@ public class Kernel {
 
     /**
      * Returns the BFT manager.
-     * 
+     *
      * @return
      */
     public BftManager getBftManager() {

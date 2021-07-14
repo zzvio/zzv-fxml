@@ -8,8 +8,10 @@ package org.semux.log;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -28,29 +30,54 @@ public class LoggerConfigurator {
     public static final String CONFIG_XML = "log4j2.xml";
     public static final String DEBUG_LOG = "debug.log";
 
+    private static FileHandler logHandler;
+
     private LoggerConfigurator() {
     }
 
     public static void configure(Config config) {
-        File file = new File(config.configDir(), CONFIG_XML);
 
-        if (file.exists()) {
-            System.setProperty("log.file", new File(config.logDir(), DEBUG_LOG).getAbsolutePath());
-            Logger.getGlobal().setLevel(Level.ALL);
-            // register configuration error listener
-//            StatusListener errorStatusListener = new ConfigurationErrorStatusListener();
-//            StatusLogger.getLogger().setLevel(Level.OFF);
-//            StatusLogger.getLogger().reset();
-//            StatusLogger.getLogger().registerListener(errorStatusListener);
-//
-//            // load configuration
-//            final LoggerContext context = (LoggerContext) LogManager.getContext(false);
-//            context.setConfigLocation(file.toURI());
-//            context.updateLoggers();
-//
-//            // remove configuration error listener
-//            StatusLogger.getLogger().removeListener(errorStatusListener);
+        Logger rootLogger = Logger.getLogger("");
+        try {
+        logHandler=new FileHandler("C:\\zzv\\zzv-fxml\\log\\log.txt",true);
+        logHandler.setFormatter(new SimpleFormatter());
+        logHandler.setLevel(Level.FINE);
+        rootLogger.removeHandler(rootLogger.getHandlers()[0]);
+        rootLogger.setLevel(Level.FINE);
+        rootLogger.addHandler(logHandler);
         }
+        catch (  SecurityException e) {
+            System.err.println("Security exception while initialising logger : " + e.getMessage());
+        }
+        catch (  IOException e) {
+            System.err.println("IO exception while initialising logger : " + e.getMessage());
+        }
+
+//        File file = new File(config.configDir(), CONFIG_XML);
+//
+//        if (file.exists()) {
+//            File logFile = new File(config.logDir(), DEBUG_LOG);
+//            System.out.println("*************************************************");
+//            System.out.println("log.file - " + logFile.getAbsolutePath());
+//            System.setProperty("log.file",logFile.getAbsolutePath());
+//            Logger.getGlobal().setLevel(Level.ALL);
+//            System.out.println("*************************************************");            // register configuration error listener
+//
+//
+//
+////            StatusListener errorStatusListener = new ConfigurationErrorStatusListener();
+////            StatusLogger.getLogger().setLevel(Level.OFF);
+////            StatusLogger.getLogger().reset();
+////            StatusLogger.getLogger().registerListener(errorStatusListener);
+////
+////            // load configuration
+////            final LoggerContext context = (LoggerContext) LogManager.getContext(false);
+////            context.setConfigLocation(file.toURI());
+////            context.updateLoggers();
+////
+////            // remove configuration error listener
+////            StatusLogger.getLogger().removeListener(errorStatusListener);
+//        }
     }
 
 //    /**

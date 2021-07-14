@@ -7,7 +7,9 @@
 package org.semux;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Properties;
 
 import org.semux.cli.SemuxCli;
 
@@ -32,6 +34,15 @@ public class Main {
     }
     if (startArgs.size() == 0) {
       startArgs.add("--network=devnet");
+    }
+
+    Properties p = System.getProperties();
+    Enumeration keys = p.keys();
+    System.out.println("ENVIRONMENT : ");
+    while (keys.hasMoreElements()) {
+      String key = (String)keys.nextElement();
+      String value = (String)p.get(key);
+      System.out.println(key + " : " + value);
     }
 
     if (startGui) {

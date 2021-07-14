@@ -22,7 +22,7 @@
         <attach.version>4.0.11</attach.version>
         <connect.version>2.0.1</connect.version>
         <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
-        <gluonfx.maven.plugin.version>1.0.0</gluonfx.maven.plugin.version>
+        <gluonfx.maven.plugin.version>1.0.3</gluonfx.maven.plugin.version>
         <charm.version>6.0.6</charm.version>
         <main.class>org.semux.Main</main.class>
     </properties>
@@ -45,14 +45,13 @@
         <url>https://github.com/semuxproject/semux-core/issues</url>
     </issueManagement>
 
-    <pluginRepositories>
+   <pluginRepositories>
         <pluginRepository>
-            <id>bintray</id>
-            <url>https://jcenter.bintray.com</url>
+            <id>sonatype</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
     </pluginRepositories>
-
-
+	
     <dependencies>
         <dependency>
             <groupId>org.fusesource.leveldbjni</groupId>
@@ -829,8 +828,14 @@
                 <artifactId>gluonfx-maven-plugin</artifactId>
                 <version>${gluonfx.maven.plugin.version}</version>
                 <configuration>
+                    <verbose>true</verbose>
                     <target>${gluonfx.target}</target>
                     <mainClass>${main.class}</mainClass>
+					<runtimeArgs>
+                        <list>--network=mainnet</list>
+                        <list>--gui</list>
+                        <list>--log=FINEST</list>
+                    </runtimeArgs>
                     <bundlesList>
                         <list>org.semux.cli.messages</list>
                         <list>org.semux.gui.messages</list>
@@ -1010,6 +1015,14 @@
                         <list>io.zzv.views.ReceiveView</list>
                         <list>io.zzv.views.SendView</list>
                         <list>io.zzv.views.TransactionsView</list>
+                        <list>io.zzv.views.DebugPresenter</list>
+                        <list>io.zzv.views.DebugView</list>
+                        <List>org.semux.Launcher</List>
+                        <list>org.semux.net.ChannelManager</list>
+                        <list>org.semux.net.Channel</list>
+                        <list>org.semux.core.BftManager</list>
+                        <list>org.semux.consensus.SemuxSync</list>
+                        <list>org.semux.consensus.SemuxBft</list>
                     </reflectionList>
                     <attachList>
                         <list>display</list>

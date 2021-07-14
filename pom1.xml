@@ -1,0 +1,1141 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.semux</groupId>
+    <artifactId>semux-core</artifactId>
+    <version>2.3.0</version>
+    <packaging>jar</packaging>
+    <description>Semux is an experimental high-performance blockchain platform that powers decentralized application.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dist.phase>install</dist.phase>
+        <dist.base>${project.basedir}/dist</dist.base>
+        <dist.windowsExecutableVersion>${project.version}.0</dist.windowsExecutableVersion>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
+        <skip.git.info>false</skip.git.info>
+        <javafx.version>16</javafx.version>
+        <glisten.afterburner.version>2.0.5</glisten.afterburner.version>
+        <attach.version>4.0.11</attach.version>
+        <connect.version>2.0.1</connect.version>
+        <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
+        <gluonfx.maven.plugin.version>1.0.3</gluonfx.maven.plugin.version>
+        <charm.version>6.0.6</charm.version>
+        <main.class>org.semux.Main</main.class>
+    </properties>
+
+    <organization>
+        <name>ZaZaVi</name>
+        <url>https://www.zazavi.io</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/semuxproject/semux-core/issues</url>
+    </issueManagement>
+
+   <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+	
+    <dependencies>
+        <dependency>
+            <groupId>org.fusesource.leveldbjni</groupId>
+            <artifactId>leveldbjni-linux64</artifactId>
+            <version>1.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.openjfx</groupId>-->
+        <!--            <artifactId>javafx-media</artifactId>-->
+        <!--            <version>${javafx.version}</version>-->
+        <!--        </dependency>-->
+        <!-- -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>charm-glisten</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>display</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>lifecycle</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>statusbar</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>storage</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>util</artifactId>
+            <version>${attach.version}</version>
+        </dependency>
+        <!-- Logging framework -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-api</artifactId>-->
+        <!--            <version>1.7.26</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+        <!-- Bouncy Castle -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.69</version>
+        </dependency>
+
+
+        <!-- LevelDB -->
+        <dependency>
+            <groupId>org.ethereum</groupId>
+            <artifactId>leveldbjni-all</artifactId>
+            <version>1.18.3</version>
+        </dependency>
+
+        <!-- Netty network framework -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.42.Final</version>
+        </dependency>
+
+        <!-- Snappy Java -->
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>1.1.7.3</version>
+        </dependency>
+
+        <!-- Oshi Core -->
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>5.7.2</version>
+        </dependency>
+
+        <!-- Apache commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.3</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>commons-logging</groupId>-->
+        <!--            <artifactId>commons-logging</artifactId>-->
+        <!--            <version>1.2</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>1.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+
+        <!-- ED25519 -->
+        <dependency>
+            <groupId>net.i2p.crypto</groupId>
+            <artifactId>eddsa</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+
+        <!-- zxing QR -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
+        <!-- weupnp -->
+        <dependency>
+            <groupId>org.bitlet</groupId>
+            <artifactId>weupnp</artifactId>
+            <version>0.1.4</version>
+        </dependency>
+
+        <!-- semantic version -->
+        <dependency>
+            <groupId>com.github.zafarkhaja</groupId>
+            <artifactId>java-semver</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+
+        <!-- Caffeine Caching Library -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <!-- Testing Libraries -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.11.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-swing</artifactId>
+            <version>3.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-swing-junit</artifactId>
+            <version>3.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.9.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
+            <version>1.19.0</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit-dep</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.0.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.rauschig</groupId>
+            <artifactId>jarchivelib</artifactId>
+            <version>1.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.knowm.xchart</groupId>
+            <artifactId>xchart</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.29</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-proxy-client</artifactId>
+            <version>2.29</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.29</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.29</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.9.9</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <profiles>
+        <profile>
+            <id>desktop</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gluonfx.target>host</gluonfx.target>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.gluonhq.attach</groupId>
+                    <artifactId>display</artifactId>
+                    <version>${attach.version}</version>
+                    <classifier>desktop</classifier>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.gluonhq.attach</groupId>
+                    <artifactId>lifecycle</artifactId>
+                    <version>${attach.version}</version>
+                    <classifier>desktop</classifier>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.gluonhq.attach</groupId>
+                    <artifactId>storage</artifactId>
+                    <version>${attach.version}</version>
+                    <classifier>desktop</classifier>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>android</id>
+            <properties>
+                <gluonfx.target>android</gluonfx.target>
+            </properties>
+        </profile>
+        <profile>
+            <id>ios</id>
+            <properties>
+                <gluonfx.target>ios</gluonfx.target>
+            </properties>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>gluon-releases</id>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>bintray</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <!-- compile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/java</source>
+                                <source>${project.basedir}/src/gen/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- build fat jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifestEntries>
+                            <Main-Class>org.semux.Main</Main-Class>
+                            <Implementation-Version>${git.commit.id.abbrev}</Implementation-Version>
+                            <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
+                            <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <shadedArtifactAttached>true</shadedArtifactAttached>
+                    <shadedClassifierName>shaded</shadedClassifierName>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>junit:*</exclude>
+                            <exclude>org.powermock:*</exclude>
+                            <exclude>org.assertj:*</exclude>
+                            <exclude>org.awaitility:*</exclude>
+                            <exclude>org.easytesting:*</exclude>
+                            <exclude>net.bytebuddy:*</exclude>
+                            <exclude>org.hamcrest:*</exclude>
+                            <exclude>org.mockito:*</exclude>
+                            <exclude>com.github.stefanbirkner:system-rules</exclude>
+                        </excludes>
+                    </artifactSet>
+                    <transformers>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.DontIncludeResourceTransformer">
+                            <resource>.SF</resource>
+                        </transformer>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                            <resource>LICENSE</resource>
+                        </transformer>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <manifestEntries>
+                                <Main-Class>org.semux.Main</Main-Class>
+                                <Implementation-Version>${git.commit.id.abbrev}</Implementation-Version>
+                                <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
+                                <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                                <Multi-Release>true</Multi-Release>
+                            </manifestEntries>
+                        </transformer>
+                    </transformers>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.4</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>validate-the-git-infos</id>
+                        <goals>
+                            <goal>validateRevision</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                    <skip>${skip.git.info}</skip>
+                    <abbrevLength>7</abbrevLength>
+                    <verbose>false</verbose>
+                    <skipPoms>false</skipPoms>
+                </configuration>
+            </plugin>
+
+            <!-- prepare distribution -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>dist</id>
+                        <phase>${dist.phase}</phase>
+                        <configuration>
+                            <target>
+                                <!-- windows build -->
+                                <copy todir="${dist.base}/windows">
+                                    <fileset dir="${project.basedir}">
+                                        <include name="config/**"/>
+                                        <include name="LICENSE*"/>
+                                    </fileset>
+                                </copy>
+                                <copy file="${project.basedir}/src/main/resources/org/semux/gui/splash.png"
+                                      todir="${dist.base}/windows/lib"/>
+                                <copy file="${project.basedir}/target/semux-core-${project.version}-shaded.jar"
+                                      tofile="${dist.base}/windows/lib/semux.jar"/>
+                                <copy file="${project.basedir}/scripts/semux-cli.bat"
+                                      tofile="${dist.base}/windows/semux-cli.bat"/>
+                                <copy file="${project.basedir}/scripts/semux-gui.bat"
+                                      tofile="${dist.base}/windows/semux-gui.bat"/>
+                                <fixcrlf srcdir="${dist.base}/windows" includes="**/*.ini" eol="dos" eof="asis"/>
+                                <fixcrlf srcdir="${dist.base}/windows" includes="config/*" eol="dos" eof="asis"/>
+                                <fixcrlf srcdir="${dist.base}/windows" includes="LICENSE*" eol="dos" eof="asis"/>
+
+                                <!-- linux build (executable jar) -->
+                                <copy todir="${dist.base}/linux">
+                                    <fileset dir="${project.basedir}">
+                                        <include name="config/**"/>
+                                        <include name="LICENSE*"/>
+                                    </fileset>
+                                </copy>
+                                <copy file="${project.basedir}/src/main/resources/org/semux/gui/splash.png"
+                                      todir="${dist.base}/linux/lib"/>
+                                <copy file="${project.basedir}/target/semux-core-${project.version}-shaded.jar"
+                                      tofile="${dist.base}/linux/lib/semux.jar"/>
+                                <copy file="${project.basedir}/scripts/semux-cli.sh"
+                                      tofile="${dist.base}/linux/semux-cli.sh"/>
+                                <copy file="${project.basedir}/scripts/semux-gui.sh"
+                                      tofile="${dist.base}/linux/semux-gui.sh"/>
+                                <chmod file="${dist.base}/linux/semux*.sh" perm="755"/>
+                                <chmod dir="${dist.base}/linux/config" perm="700"/>
+                                <chmod file="${dist.base}/linux/config/*" perm="600"/>
+
+                                <!-- macos build -->
+                                <copy todir="${dist.base}/macos">
+                                    <fileset dir="${project.basedir}">
+                                        <include name="config/**"/>
+                                        <include name="LICENSE*"/>
+                                    </fileset>
+                                </copy>
+                                <copy file="${project.basedir}/src/main/resources/org/semux/gui/splash.png"
+                                      todir="${dist.base}/macos/lib"/>
+                                <copy file="${project.basedir}/target/semux-core-${project.version}-shaded.jar"
+                                      tofile="${dist.base}/macos/lib/semux.jar"/>
+                                <copy file="${project.basedir}/scripts/semux-cli.sh"
+                                      tofile="${dist.base}/macos/semux-cli.sh"/>
+                                <copy file="${project.basedir}/scripts/semux-gui.sh"
+                                      tofile="${dist.base}/macos/semux-gui.sh"/>
+                                <chmod file="${dist.base}/macos/semux*.sh" perm="755"/>
+                                <chmod dir="${dist.base}/macos/config" perm="700"/>
+                                <chmod file="${dist.base}/macos/config/*" perm="600"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- clean -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${dist.base}</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <!-- code coverage -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <configuration>
+                    <sourceDirectories>
+                        <sourceDirectory>${basedir}/src/gen/java</sourceDirectory>
+                    </sourceDirectories>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <format>xml</format>
+                    <maxmem>256m</maxmem>
+                    <aggregate>true</aggregate>
+                    <quiet>true</quiet>
+                    <instrumentation>
+                        <ignoreTrivial>true</ignoreTrivial>
+                    </instrumentation>
+                    <check/>
+                </configuration>
+            </plugin>
+
+            <!-- license header check -->
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <header>misc/license_header.txt</header>
+                    <encoding>UTF-8</encoding>
+                    <includes>
+                        <include>src/main/**/*.java</include>
+                        <include>src/test/**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- eclipse formatter/validator -->
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <version>2.7.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <lineEnding>LF</lineEnding>
+                    <configFile>${project.basedir}/misc/formatter_eclipse.xml</configFile>
+                    <directories>
+                        <directory>${project.basedir}/src/main/java</directory>
+                        <directory>${project.basedir}/src/test/java</directory>
+                    </directories>
+                </configuration>
+            </plugin>
+
+            <!-- eclipse import sorter -->
+            <plugin>
+                <groupId>net.revelc.code</groupId>
+                <artifactId>impsort-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                    <groups>java.,javax.,org.,com.</groups>
+                    <staticGroups>java,*</staticGroups>
+                    <excludes/>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sort-imports</id>
+                        <goals>
+                            <goal>sort</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- SpotBugs -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <dependencies>
+                    <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.2.2</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <threshold>High</threshold>
+                </configuration>
+            </plugin>
+
+            <!-- testing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <!-- do not reuse JVM instances -->
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <!-- allow flaky tests -->
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                    <argLine>-Xmx1024m</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <options>
+                        <option>
+                            -agentlib:native-image-agent=config-merge-dir=src/main/resources/META-INF/substrate/config
+                        </option>
+                    </options>
+                    <commandlineArgs>--network=mainnet --gui</commandlineArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.gluonhq</groupId>
+                <artifactId>gluonfx-maven-plugin</artifactId>
+                <version>${gluonfx.maven.plugin.version}</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <target>${gluonfx.target}</target>
+                    <mainClass>${main.class}</mainClass>
+					<runtimeArgs>
+                        <list>--network=mainnet</list>
+                        <list>--gui</list>
+                        <list>--log=FINEST</list>
+                    </runtimeArgs>
+                    <bundlesList>
+                        <list>org.semux.cli.messages</list>
+                        <list>org.semux.gui.messages</list>
+                        <list>org.semux.gui.</list>
+                        <list>wordlists.english.txt</list>
+                        <list>wordlists.french.txt</list>
+                        <list>wordlists.italian.txt</list>
+                        <list>wordlists.japanese.txt</list>
+                        <list>wordlists.korean.txt</list>
+                        <list>wordlists.spanish.txt</list>
+                    </bundlesList>
+                    <reflectionList>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.DH$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.DSA$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.DSTU4145$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.EC$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.ECGOST$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.EdEC$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.ElGamal$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.GM$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.GOST$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.IES$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.RSA$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.asymmetric.X509$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Blake2b$Blake2b256</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Blake2b$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Blake2s$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.DSTU7564$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.GOST3411$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Keccak$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.MD2$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.MD4$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.MD5$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.RIPEMD128$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.RIPEMD160$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.RIPEMD256$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.RIPEMD320$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA1$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA224$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA256$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA3$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA384$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SHA512$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.SM3$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Skein$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Tiger$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.digest.Whirlpool$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.drbg.DRBG$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.keystore.BC$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.keystore.BCFKS$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.keystore.PKCS12$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.AES$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.ARC4$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.ARIA$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Blowfish$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.CAST5$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.CAST6$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Camellia$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.ChaCha$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.DES$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.DESede$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.DSTU7624$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.GOST28147$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.GOST3412_2015$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Grain128$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Grainv1$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.HC128$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.HC256$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.IDEA$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Noekeon$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.OpenSSLPBKDF$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.PBEPBKDF1$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.PBEPBKDF2$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.PBEPKCS12$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Poly1305$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.RC2$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.RC5$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.RC6$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Rijndael$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.SCRYPT$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.SEED$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.SM4$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Salsa20$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Serpent$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Shacal2$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.SipHash$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Skipjack$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.TEA$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.TLSKDF$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Threefish$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.Twofish$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.VMPC$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.VMPCKSA3$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.XSalsa20$Mappings</list>
+                        <list>org.bouncycastle.jcajce.provider.symmetric.XTEA$Mappings</list>
+                        <list>org.apache.logging.log4j.message.DefaultFlowMessageFactory</list>
+                        <list>org.apache.logging.log4j.message.ParameterizedMessageFactory</list>
+                        <list>org.ethereum.vm.DataWord</list>
+                        <list>org.ethereum.vm.LogInfo</list>
+                        <list>org.semux.core.Amount</list>
+                        <list>org.semux.core.Block</list>
+                        <list>org.semux.core.BlockHeader</list>
+                        <list>org.semux.core.Genesis</list>
+                        <list>org.semux.core.Genesis$Premine</list>
+                        <list>org.semux.core.Transaction</list>
+                        <list>org.semux.core.TransactionResult</list>
+                        <list>org.semux.core.TransactionResult$Code</list>
+                        <list>org.semux.core.TransactionType</list>
+                        <list>org.semux.crypto.Key$Signature</list>
+                        <list>org.semux.udp.PeerUdpHandler$2</list>
+                        <list>org.semux.udp.UdpChannelHandler</list>
+                        <list>org.semux.util.ByteArray$ByteArrayKeyDeserializer</list>
+                        <list>org.semux.vm.client.SemuxInternalTransaction</list>
+                        <list>org.slf4j.bridge.SLF4JBridgeHandler</list>
+                        <list>org.slf4j.spi.LocationAwareLogger</list>
+                        <list>org.synchronoss.cloud.nio.multipart.NioMultipartParser</list>
+                        <list>reactor.adapter.JdkFlowAdapter</list>
+                        <list>reactor.core.publisher.Flux</list>
+                        <list>reactor.netty.channel.BootstrapHandlers$BootstrapInitializerHandler</list>
+                        <list>reactor.netty.channel.ChannelOperationsHandler</list>
+                        <list>reactor.netty.http.client.HttpClient</list>
+                        <list>reactor.netty.http.server.HttpServer</list>
+                        <list>reactor.netty.http.server.HttpTrafficHandler</list>
+                        <list>sun.misc.Unsafe</list>
+                        <list>sun.nio.ch.SelectorImpl</list>
+                        <list>sun.security.provider.NativePRNG</list>
+                        <list>sun.security.provider.SHA</list>
+                        <list>sun.security.provider.SHA2$SHA256</list>
+                        <list>sun.security.provider.SHA5$SHA512</list>
+                        <list>sun.security.provider.SecureRandom</list>
+                        <list>sun.security.provider.Sun</list>
+                        <list>sun.security.rsa.RSAKeyPairGenerator$Legacy</list>
+                        <list>org.bouncycastle.crypto.CipherParameters</list>
+                        <list>org.bouncycastle.crypto.DataLengthException</list>
+                        <list>org.bouncycastle.crypto.InvalidCipherTextException</list>
+                        <list>org.bouncycastle.crypto.engines.AESEngine</list>
+                        <list>org.bouncycastle.crypto.modes.CBCBlockCipher</list>
+                        <list>org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher</list>
+                        <list>org.bouncycastle.crypto.params.KeyParameter</list>
+                        <list>org.bouncycastle.crypto.params.ParametersWithIV</list>
+                        <list>org.bouncycastle.crypto.digests.RIPEMD160Digest</list>
+                        <list>org.bouncycastle.jce.provider.BouncyCastleProvider</list>
+                        <list>org.bouncycastle.math.ec.ECPoint</list>
+                        <list>org.semux.crypto.CryptoException</list>
+                        <list>org.semux.crypto.Hex</list>
+                        <list>org.semux.crypto.bip32.key.HdPrivateKey</list>
+                        <list>org.semux.crypto.bip32.key.HdPublicKey</list>
+                        <list>org.semux.crypto.bip32.key.KeyVersion</list>
+                        <list>org.semux.crypto.bip32.util.BytesUtil</list>
+                        <list>org.semux.crypto.bip32.util.HashUtil</list>
+                        <list>org.semux.crypto.bip32.util.Hmac</list>
+                        <list>org.semux.crypto.bip32.util.Secp256k1</list>
+                        <list>net.i2p.crypto.eddsa.EdDSAPrivateKey</list>
+                        <list>net.i2p.crypto.eddsa.EdDSAPublicKey</list>
+                        <list>net.i2p.crypto.eddsa.spec.EdDSANamedCurveTable</list>
+                        <list>net.i2p.crypto.eddsa.spec.EdDSAParameterSpec</list>
+                        <list>net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec</list>
+                        <list>net.i2p.crypto.eddsa.spec.EdDSAPublicKeySpec</list>
+                        <list>org.bouncycastle.crypto.digests.RIPEMD160Digest</list>
+                        <list>org.bouncycastle.asn1.x9.X9ECParameters</list>
+                        <list>org.bouncycastle.crypto.ec.CustomNamedCurves</list>
+                        <list>org.bouncycastle.math.ec.ECPoint</list>
+                        <list>sun.security.jca.GetInstance</list>
+                        <list>java.security.MessageDigest</list>
+                        <list>java.security.MessageDigestSpi</list>
+                        <list>io.zzv.MainGui</list>
+                        <list>io.zzv.DrawerManager</list>
+                        <list>io.zzv.views.TransactionsPresenter</list>
+                        <list>io.zzv.views.SendPresenter</list>
+                        <list>io.zzv.views.ReceivePresenter</list>
+                        <list>io.zzv.views.HomePresenter</list>
+                        <list>io.zzv.views.DelegatesPresenter</list>
+                        <list>io.zzv.views.ChannelsPresenter</list>
+                        <list>io.zzv.views.HomeView</list>
+                        <list>io.zzv.views.ChannelsView</list>
+                        <list>io.zzv.views.DelegatesView</list>
+                        <list>io.zzv.views.ReceiveView</list>
+                        <list>io.zzv.views.SendView</list>
+                        <list>io.zzv.views.TransactionsView</list>
+                        <list>io.zzv.views.DebugPresenter</list>
+                        <list>io.zzv.views.DebugView</list>
+                        <List>org.semux.Launcher</List>
+                        <list>org.semux.net.ChannelManager</list>
+                        <list>org.semux.net.Channel</list>
+                        <list>org.semux.core.BftManager</list>
+                        <list>org.semux.consensus.SemuxSync</list>
+                        <list>org.semux.consensus.SemuxBft</list>
+                    </reflectionList>
+                    <attachList>
+                        <list>display</list>
+                        <list>lifecycle</list>
+                        <list>statusbar</list>
+                        <list>storage</list>
+                    </attachList>
+                    <nativeImageArgs>
+                        <nativeImageArg>-g</nativeImageArg>
+                        <nativeImageArg>--verbose</nativeImageArg>
+                        <nativeImageArg>--no-fallback</nativeImageArg>
+                        <nativeImageArg>--report-unsupported-elements-at-runtime</nativeImageArg>
+                        <nativeImageArg>--allow-incomplete-classpath</nativeImageArg>
+                        <nativeImageArg>--native-image-info</nativeImageArg>
+                        <nativeImageArg>-H:-InternalSymbolsAreGlobal</nativeImageArg>
+                        <nativeImageArg>-H:TraceClassInitialization=true</nativeImageArg>
+                        <nativeImageArg>-H:+ReportUnsupportedElementsAtRuntime</nativeImageArg>
+                        <nativeImageArg>-H:-AllowVMInspection</nativeImageArg>
+                        <nativeImageArg>-H:+ReportExceptionStackTraces</nativeImageArg>
+                        <nativeImageArg>-R:-InstallSegfaultHandler</nativeImageArg>
+                        <nativeImageArg>--enable-all-security-services</nativeImageArg>
+                        <nativeImageArg>--trace-class-initialization=sun.instrument.InstrumentationImpl</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=io.netty</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=io.zzv</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.fusesource.leveldbjni</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.ethereum</nativeImageArg>
+                        <nativeImageArg>-H:IncludeResourceBundles=org/semux/cli/messages</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.CipherParameters
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.DataLengthException
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.InvalidCipherTextException
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.engines.AESEngine
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.modes.CBCBlockCipher
+                        </nativeImageArg>
+                        <nativeImageArg>
+                            --initialize-at-run-time=org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.params.KeyParameter
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.params.ParametersWithIV
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.digests.RIPEMD160Digest
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.jce.provider.BouncyCastleProvider
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.CryptoException</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.Hex</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.key.HdPrivateKey
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.key.HdPublicKey</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.key.KeyVersion</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.util.BytesUtil</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.util.HashUtil</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.util.Hmac</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.semux.crypto.bip32.util.Secp256k1</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.EdDSAPrivateKey</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.EdDSAPublicKey</nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.spec.EdDSANamedCurveTable
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.spec.EdDSAParameterSpec
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=net.i2p.crypto.eddsa.spec.EdDSAPublicKeySpec
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.digests.RIPEMD160Digest
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.asn1.x9.X9ECParameters
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.ec.CustomNamedCurves
+                        </nativeImageArg>
+                        <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
+                    </nativeImageArgs>
+
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven
+                    build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-antrun-plugin</artifactId>
+                                        <versionRange>1.8</versionRange>
+                                        <goals>
+                                            <goal>run</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
