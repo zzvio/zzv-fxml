@@ -18,8 +18,11 @@ jobs:
       - name: Mvn clean
         run: mvn dependency:purge-local-repository -Dverbose=true
     
-      - name: Gluon Build
+      - name: Gluon Compile
         run: mvn gluonfx:compile -X -e 
+
+      - name: Gluon Compile
+        run: mvn gluonfx:link gluonfx:package
 
       # - name: Import MACOS_APP_CERT
       #   uses: Apple-Actions/import-codesign-certs@v1
