@@ -15,8 +15,8 @@ jobs:
           graalvm: '21.3.0-dev-20210713_1945'
           java: java11
 
-      - name: Gluon Build
-        run: mvn clean
+      - name: Mvn clean
+        run: mvn dependency:purge-local-repository -Dverbose=true
     
       - name: Gluon Build
         run: mvn gluonfx:build gluon:package
