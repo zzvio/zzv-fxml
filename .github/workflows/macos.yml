@@ -16,6 +16,9 @@ jobs:
           java: java11
 
       - name: Gluon Build
+        run: mvn clean
+    
+      - name: Gluon Build
         run: mvn gluonfx:build gluon:package
 
       # - name: Import MACOS_APP_CERT
