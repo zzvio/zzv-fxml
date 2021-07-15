@@ -6,6 +6,11 @@
  */
 package org.semux;
 
+import java.io.File;
+import java.util.Objects;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Logger;
+
 import org.semux.config.Config;
 import org.semux.consensus.SemuxBft;
 import org.semux.consensus.SemuxSync;
@@ -24,14 +29,10 @@ import org.semux.net.PeerServer;
 import org.semux.util.Bytes;
 import org.semux.util.TimeUtil;
 import org.semux.vm.client.SemuxBlock;
+
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.OperatingSystem;
-
-import java.io.File;
-import java.util.Objects;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.logging.Logger;
 
 /**
  * Kernel holds references to each individual components.

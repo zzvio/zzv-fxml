@@ -831,7 +831,8 @@
                     <verbose>true</verbose>
                     <target>${gluonfx.target}</target>
                     <mainClass>${main.class}</mainClass>
-					<runtimeArgs>
+                    <enableSWRendering>true</enableSWRendering>
+	       	<runtimeArgs>
                         <list>--network=mainnet</list>
                         <list>--gui</list>
                         <list>--log=FINEST</list>
