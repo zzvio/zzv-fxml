@@ -4,7 +4,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.*?>
-<View xmlns:fx="http://javafx.com/fxml/1" fx:id="debug" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+<View xmlns:fx="http://javafx.com/fxml/1" fx:id="debugView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Debug.css"
       xmlns="http://javafx.com/javafx/8" fx:controller="io.zzv.views.DebugPresenter">
     <top>
@@ -17,7 +17,7 @@
                 <RowConstraints maxHeight="560.0" minHeight="10.0" prefHeight="551.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <TableView fx:id="companyTable" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
+                <TableView fx:id="debugTableView" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
                     <columns>
                         <TableColumn fx:id="groupColumn" prefWidth="50.0" text="Group"/>
                         <TableColumn fx:id="descColumn" minWidth="20.0" prefWidth="50.0" text="Desc"/>

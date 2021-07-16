@@ -22,4 +22,14 @@ mvn gluonfx:compile -X -e
 mvn gluonfx:link -X -e
 
 mvn gluonfx:nativerun -X -e
+
+```
+#COMPILE
+
+```
+you can commit to bitbucket with [COMPILE] tag in order to start Github Actions which will be triggered and 
+synchronize bitbucket with github repositories and then will build the project for all operating systems
+git add .
+git commit -m"[COMPILE] test to trigger Github Actions"
+git push
 ```

@@ -61,7 +61,7 @@
 
         <dependency>
             <groupId>org.fusesource.leveldbjni</groupId>
-            <artifactId>leveldbjni-linux64</artifactId>
+            <artifactId>leveldbjni-all</artifactId>
             <version>1.8</version>
         </dependency>
 
