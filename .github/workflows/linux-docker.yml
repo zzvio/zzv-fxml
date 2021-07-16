@@ -21,21 +21,21 @@ jobs:
       - name: Gluon Build
         run: mvn -Pdesktop gluonfx:build gluonfx:package
 
-      - name: Copy native app to zzv-apt-package
-        run: |
-          mkdir -p src/linux/zzv_1.0.1_amd64/usr/local/bin/;
-          cp target/gluonfx/x86_64-linux/semux-core src/linux/zzv_1.0.1_amd64/usr/local/bin/semux-core
+      # - name: Copy native app to zzv-apt-package
+      #   run: |
+      #     mkdir -p src/linux/zzv_1.0.1_amd64/usr/local/bin/;
+      #     cp target/gluonfx/x86_64-linux/semux-core src/linux/zzv_1.0.1_amd64/usr/local/bin/semux-core
 
-      - name: Build apt-repository
-        run: cd src/linux && bash gpg.sh && bash package.sh
-        env: 
-          GPG_PASS: ${{ secrets.GPG_PASS }}
+      # - name: Build apt-repository
+      #   run: cd src/linux && bash gpg.sh && bash package.sh
+      #   env: 
+      #     GPG_PASS: ${{ secrets.GPG_PASS }}
 
       - name: Make staging directory
         run: mkdir staging
 
       - name: Copy apt repo to staging
-        run: cp -r src/linux/zzv-view-apt-repo.zip staging
+        run: cp -r target/gluonfx/x86_64-linux/semux-core staging
 
       - name: Upload
         uses: actions/upload-artifact@v2
