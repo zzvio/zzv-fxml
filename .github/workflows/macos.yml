@@ -6,19 +6,23 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: [self-hosted, macOS, X64]
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Gluon's GraalVM
-        uses: gluonhq/setup-graalvm@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: zzvio/setup-graalvm@5.3
         with:
           graalvm: '21.3.0-dev-20210713_1945'
+          java: java11
 
-      - name: Gluon Build
-        run: mvn -Pdesktop gluonfx:build gluon:package
+      - name: Mvn clean
+        run: mvn dependency:purge-local-repository -Dverbose=true
+    
+      - name: Gluon Compile
+        run: mvn gluonfx:compile -X -e 
+
+      - name: Gluon Compile
+        run: mvn gluonfx:link gluonfx:package
 
       # - name: Import MACOS_APP_CERT
       #   uses: Apple-Actions/import-codesign-certs@v1
@@ -62,3 +66,4 @@ jobs:
       #     APPSTORE_KEY_ID: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
       #     APPSTORE_ISSUER_ID: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
       #   run: bash -x src/osx/upload.sh
+

@@ -6,16 +6,14 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: [self-hosted, macOS, X64]
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Gluon's GraalVM
-        uses: gluonhq/setup-graalvm@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: zzvio/setup-graalvm@5.3
         with:
           graalvm: '21.3.0-dev-20210713_1945'
+          java: java11
 
       # https://developer.apple.com
       # - uses: Apple-Actions/import-codesign-certs@v1
