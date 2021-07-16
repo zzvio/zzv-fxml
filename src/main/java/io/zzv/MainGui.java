@@ -21,7 +21,63 @@ public class MainGui extends MobileApplication {
     public static final String CHANNELS_VIEW = "Channels";
     public static final String DEBUG_VIEW = "Debug";
 
-    private static final SemuxCli chain = null;
+    private static SemuxCli chain = null;
+
+    public static void main(String[] args) {
+
+        chain = new SemuxCli();
+        try {
+            SemuxCli.main(args, chain);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        PubSubFactory.getDefault().start();
+        SemuxCli.registerShutdownHook("pubsub-default", () -> PubSubFactory.getDefault().stop());
+        launch(args);
+        try {
+            chain.stop();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.exit(0);
+    }
+
+//    public static void main(String[] args) {
+//
+//        MainGui.MyRunnable myRunnable = new MainGui.MyRunnable(args);
+//        Thread t = new Thread(myRunnable);
+//        t.start();
+//        launch(args);
+//        myRunnable.stop();
+//        try {
+//            Thread.sleep(2000);
+//        } catch (Exception e) {
+//        }
+//        System.exit(0);
+//    }
+
+    @Override
+    public void init() {
+
+        addViewFactory(PRIMARY_VIEW, () -> new HomeView().getView());
+        addViewFactory(RECEIVE_VIEW, () -> new ReceiveView().getView());
+        addViewFactory(SEND_VIEW, () -> new SendView().getView());
+        addViewFactory(TRANSACTIONS_VIEW, () -> new TransactionsView().getView());
+        addViewFactory(DELEGATES_VIEW, () -> new DelegatesView().getView());
+        addViewFactory(CHANNELS_VIEW, () -> new ChannelsView().getView());
+        addViewFactory(DEBUG_VIEW, () -> new DebugView().getView());
+        DrawerManager.buildDrawer(this);
+    }
+
+    @Override
+    public void postInit(Scene scene) {
+        Swatch.BLUE.assignTo(scene);
+
+        scene.getStylesheets().add(MainGui.class.getResource("style.css").toExternalForm());
+        ((Stage) scene.getWindow())
+                .getIcons()
+                .add(new Image(MainGui.class.getResourceAsStream("/icon.png")));
+    }
 
     private static class MyRunnable implements Runnable {
 
@@ -45,42 +101,5 @@ public class MainGui extends MobileApplication {
         void stop() {
             chain.stop();
         }
-    }
-
-    public static void main(String[] args) {
-
-        MainGui.MyRunnable myRunnable = new MainGui.MyRunnable(args);
-        Thread t = new Thread(myRunnable);
-        t.start();
-        launch(args);
-        myRunnable.stop();
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
-        }
-        System.exit(0);
-    }
-
-    @Override
-    public void init() {
-
-        addViewFactory(PRIMARY_VIEW, () -> new HomeView().getView());
-        addViewFactory(RECEIVE_VIEW, () -> new ReceiveView().getView());
-        addViewFactory(SEND_VIEW, () -> new SendView().getView());
-        addViewFactory(TRANSACTIONS_VIEW, () -> new TransactionsView().getView());
-        addViewFactory(DELEGATES_VIEW, () -> new DelegatesView().getView());
-        addViewFactory(CHANNELS_VIEW, () -> new ChannelsView().getView());
-        addViewFactory(DEBUG_VIEW, () -> new DebugView().getView());
-        DrawerManager.buildDrawer(this);
-    }
-
-    @Override
-    public void postInit(Scene scene) {
-        Swatch.BLUE.assignTo(scene);
-
-        scene.getStylesheets().add(MainGui.class.getResource("style.css").toExternalForm());
-        ((Stage) scene.getWindow())
-                .getIcons()
-                .add(new Image(MainGui.class.getResourceAsStream("/icon.png")));
     }
 }

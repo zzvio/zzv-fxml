@@ -12,6 +12,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.ea.async:ea-async:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.fusesource.leveldbjni:leveldbjni-linux64:1.8" level="project" />
     <orderEntry type="library" name="Maven: org.fusesource.leveldbjni:leveldbjni:1.8" level="project" />
     <orderEntry type="library" name="Maven: org.fusesource.hawtjni:hawtjni-runtime:1.9" level="project" />
@@ -19,13 +21,13 @@
     <orderEntry type="library" name="Maven: javax.json:javax.json-api:1.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:linux:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:16" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:linux:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:16" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:linux:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:16" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:16" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:linux:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:16" level="project" />
     <orderEntry type="library" name="Maven: com.gluonhq:charm-glisten:6.0.6" level="project" />
     <orderEntry type="library" name="Maven: com.gluonhq.attach:display:4.0.11" level="project" />
     <orderEntry type="library" name="Maven: com.gluonhq.attach:lifecycle:4.0.11" level="project" />
@@ -36,7 +38,6 @@
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.14.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.14.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-slf4j-impl:2.12.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.69" level="project" />
     <orderEntry type="library" name="Maven: org.ethereum:leveldbjni-all:1.18.3" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.42.Final" level="project" />
@@ -112,4 +113,5 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.gluonhq.attach:lifecycle:desktop:4.0.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.gluonhq.attach:storage:desktop:4.0.11" level="project" />
   </component>
+  <component name="POM File Configuration" pomFile="" />
 </module>

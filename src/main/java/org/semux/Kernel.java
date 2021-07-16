@@ -78,6 +78,14 @@ public class Kernel {
 
     private final byte[] DUMMY_ADDRESS = new Key().toAddress();
 
+    private static Kernel instance = null;
+
+    public static Kernel getInstance() throws RuntimeException{
+        if ( instance != null ){
+            return instance;
+        }
+        throw new RuntimeException("Kernel is not initialized!");
+    }
     /**
      * Creates a kernel instance and initializes it.
      *

@@ -17,6 +17,7 @@
     {"pattern":"\\Qicon.png\\E"}, 
     {"pattern":"\\Qio/zzv/style.css\\E"}, 
     {"pattern":"\\Qio/zzv/views/Channels.fxml\\E"}, 
+    {"pattern":"\\Qio/zzv/views/Debug.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Delegates.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Home.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Receive.fxml\\E"}, 
@@ -31,6 +32,7 @@
   ]},
   "bundles":[
     {"name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle"}, 
+    {"name":"com/sun/javafx/scene/control/skin/resources/controls"}, 
     {"name":"org/semux/cli/messages"}
   ]
 }

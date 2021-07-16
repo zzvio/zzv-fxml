@@ -54,6 +54,12 @@
 	
     <dependencies>
         <dependency>
+            <groupId>com.ea.async</groupId>
+            <artifactId>ea-async</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.fusesource.leveldbjni</groupId>
             <artifactId>leveldbjni-linux64</artifactId>
             <version>1.8</version>
@@ -1024,6 +1030,17 @@
                         <list>org.semux.core.BftManager</list>
                         <list>org.semux.consensus.SemuxSync</list>
                         <list>org.semux.consensus.SemuxBft</list>
+                        <list>java.net.URL</list>
+                        <list>javafx.fxml.FXMLLoader</list>
+                        <list>javafx.scene.control.TableView</list>
+                        <list>javafx.scene.control.TableColumn</list>
+                        <list>javafx.scene.control.TableColumnBase</list>
+                        <list>javafx.beans.property.StringProperty</list>
+                        <list>javafx.beans.property.BooleanProperty</list>
+                        <list>javafx.beans.property.SimpleStringProperty</list>
+                        <list>javafx.beans.property.SimpleBooleanProperty</list>
+                        <list>io.zzv.model.Debug</list>
+                        <list>io.zzv.debug.KernelFunc</list>
                     </reflectionList>
                     <attachList>
                         <list>display</list>

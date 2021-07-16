@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-
-
-<View fx:id="debug" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Debug.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.DebugPresenter">
-   <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Debug" />
-         </children>
-      </VBox>
-   </center>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+<View xmlns:fx="http://javafx.com/fxml/1" fx:id="debug" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Debug.css"
+      xmlns="http://javafx.com/javafx/8" fx:controller="io.zzv.views.DebugPresenter">
+    <top>
+        <GridPane prefHeight="600.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="560.0" minHeight="10.0" prefHeight="551.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TableView fx:id="companyTable" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn fx:id="groupColumn" prefWidth="50.0" text="Group"/>
+                        <TableColumn fx:id="descColumn" minWidth="20.0" prefWidth="50.0" text="Desc"/>
+                        <TableColumn fx:id="passedColumn" prefWidth="100.0" text="Test Passed"/>
+                    </columns>
+                </TableView>
+            </children>
+        </GridPane>
+    </top>
 </View>

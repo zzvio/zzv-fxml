@@ -10,11 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: zzvio/setup-graalvm@5.3
-        with:
-          graalvm: '21.3.0-dev-20210713_1945'
-          java: java11
-
       - name: Gluon Build
         run: mvn -Pdesktop gluonfx:build gluonfx:package
 
