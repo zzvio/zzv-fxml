@@ -15,7 +15,7 @@ RUN cd $bitbucketDir && \
     rsync -a . $githubDir --exclude .git --exclude .ssh --delete 
 RUN cd $githubDir && \
     git add . && \
-    git commit -m "Added new version from pipeline" && \
+    git commit -m "Added new version from pipeline"; \
     git push
 
 
