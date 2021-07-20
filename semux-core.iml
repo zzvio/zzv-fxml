@@ -14,10 +14,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: com.ea.async:ea-async:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Maven: org.fusesource.leveldbjni:leveldbjni-linux64:1.8" level="project" />
-    <orderEntry type="library" name="Maven: org.fusesource.leveldbjni:leveldbjni:1.8" level="project" />
-    <orderEntry type="library" name="Maven: org.fusesource.hawtjni:hawtjni-runtime:1.9" level="project" />
-    <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb-api:0.6" level="project" />
     <orderEntry type="library" name="Maven: javax.json:javax.json-api:1.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:16" level="project" />
@@ -113,5 +109,4 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.gluonhq.attach:lifecycle:desktop:4.0.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.gluonhq.attach:storage:desktop:4.0.11" level="project" />
   </component>
-  <component name="POM File Configuration" pomFile="" />
 </module>

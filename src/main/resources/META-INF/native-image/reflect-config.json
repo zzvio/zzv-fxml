@@ -1,5 +1,9 @@
 [
 {
+  "name":"apple.security.AppleProvider",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"boolean[]"
 },
 {
@@ -87,7 +91,22 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.glass.ui.Application"
+},
+{
+  "name":"com.sun.glass.ui.Menu"
+},
+{
+  "name":"com.sun.glass.ui.MenuItem$Callback"
+},
+{
   "name":"com.sun.glass.ui.Screen"
+},
+{
+  "name":"com.sun.glass.ui.Size"
+},
+{
+  "name":"com.sun.glass.ui.View"
 },
 {
   "name":"com.sun.glass.ui.win.WinDnDClipboard"
@@ -98,6 +117,10 @@
 {
   "name":"com.sun.glass.ui.win.WinPlatformFactory",
   "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.font.coretext.CTFactory",
+  "methods":[{"name":"getFactory","parameterTypes":[] }]
 },
 {
   "name":"com.sun.javafx.font.directwrite.DWFactory",
@@ -207,6 +230,10 @@
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
+  "name":"com.sun.prism.shader.Solid_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
   "name":"com.sun.prism.shader.Solid_TextureFirstPassLCD_Loader",
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
@@ -219,8 +246,16 @@
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
+  "name":"com.sun.prism.shader.Texture_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
   "name":"com.sun.prism.sw.SWPipeline",
   "methods":[{"name":"getInstance","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.scenario.effect.impl.es2.ES2ShaderSource",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"com.sun.scenario.effect.impl.hw.d3d.D3DShaderSource",
@@ -466,6 +501,24 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"io.zzv.views.ChannelsPresenter",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.zzv.views.DebugPresenter",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.zzv.views.DelegatesPresenter",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"io.zzv.views.HomePresenter",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
@@ -519,6 +572,9 @@
 {
   "name":"java.lang.Object",
   "allDeclaredFields":true
+},
+{
+  "name":"java.lang.Runnable"
 },
 {
   "name":"java.lang.Short",
@@ -671,6 +727,9 @@
   "name":"javafx.animation.KeyValue"
 },
 {
+  "name":"javafx.collections.transformation.SortedList$Element[]"
+},
+{
   "name":"javafx.fxml.FXMLLoader"
 },
 {
@@ -679,6 +738,9 @@
 },
 {
   "name":"javafx.scene.Camera"
+},
+{
+  "name":"javafx.scene.Group"
 },
 {
   "name":"javafx.scene.Node",
@@ -719,6 +781,22 @@
   "allDeclaredMethods":true
 },
 {
+  "name":"javafx.scene.control.TableColumn",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.TableColumnBase",
+  "allDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.control.TableView",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"javafx.scene.effect.Effect"
 },
 {
@@ -736,12 +814,42 @@
   ]
 },
 {
+  "name":"javafx.scene.layout.ColumnConstraints",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.layout.ConstraintsBase",
+  "allDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.layout.GridPane",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getRowIndex","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"setRowIndex","parameterTypes":["javafx.scene.Node","java.lang.Integer"] }
+  ]
+},
+{
   "name":"javafx.scene.layout.Pane",
   "allDeclaredMethods":true
 },
 {
+  "name":"javafx.scene.layout.Priority",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
   "name":"javafx.scene.layout.Region",
   "allDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.layout.RowConstraints",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"javafx.scene.layout.VBox",
@@ -769,6 +877,9 @@
 },
 {
   "name":"javafx.scene.transform.Transform"
+},
+{
+  "name":"javafx.stage.PopupWindow"
 },
 {
   "name":"javafx.stage.Stage"

@@ -41,10 +41,10 @@ public class Kernel {
 
     // Fix JNA issue: There is an incompatible JNA native library installed
     // Fix JNA issue: There is an incompatible JNA native library installed
-//    static {
-//        System.setProperty("jna.nosys", "true");
-//        //ours  System.setProperty("jna.noclasspath","true");
-//    }
+    static {
+        System.setProperty("jna.nosys", "true");
+        //ours  System.setProperty("jna.noclasspath","true");
+    }
 
     private static final Logger logger = Logger.getLogger(Kernel.class.getName());
 
