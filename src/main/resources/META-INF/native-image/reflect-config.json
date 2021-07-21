@@ -13,6 +13,10 @@
   "name":"char[]"
 },
 {
+  "name":"com.ea.async.instrumentation.Agent",
+  "methods":[{"name":"agentmain","parameterTypes":["java.lang.String","java.lang.instrument.Instrumentation"] }]
+},
+{
   "name":"com.fasterxml.jackson.core.JsonParser"
 },
 {
@@ -302,6 +306,9 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.tools.attach.VirtualMachine"
+},
+{
   "name":"com.sun.xml.internal.stream.XMLInputFactoryImpl",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -572,6 +579,13 @@
 {
   "name":"java.lang.Object",
   "allDeclaredFields":true
+},
+{
+  "name":"java.lang.ProcessHandle",
+  "methods":[
+    {"name":"current","parameterTypes":[] }, 
+    {"name":"pid","parameterTypes":[] }
+  ]
 },
 {
   "name":"java.lang.Runnable"
