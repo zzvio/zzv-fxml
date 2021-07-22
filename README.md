@@ -1,3 +1,5 @@
+#Latest version adds --language:js and start/stop Kernet
+
 #latest version should run on Linux, Windows, and MacOS
 ```
 It should be tested with semux network ( test cases should be adapted into DEBUG view

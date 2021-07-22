@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<View fx:id="channels" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
-   <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
+   <top>
+      <GridPane prefHeight="600.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="560.0" minHeight="10.0" prefHeight="551.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Label text="Channels" />
+            <TableView fx:id="channelsTableView" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
+               <columns>
+                  <TableColumn fx:id="numColumn" prefWidth="40.0" text="num" />
+                  <TableColumn fx:id="hostColumn" minWidth="0.0" prefWidth="133.0" text="host" />
+                  <TableColumn fx:id="activeColumn" minWidth="0.0" prefWidth="57.0" text="active" />
+                  <TableColumn fx:id="outboundColumn" minWidth="0.0" prefWidth="12.0" text="outbound" />
+                  <TableColumn fx:id="latencyColumn" minWidth="0.0" prefWidth="0.0" text="latency" />
+                  <TableColumn fx:id="distColumn" minWidth="0.0" prefWidth="0.0" text="dist" />
+                  <TableColumn fx:id="levelColumn" minWidth="0.0" prefWidth="0.0" text="level" />
+                  <TableColumn fx:id="inrateColumn" minWidth="0.0" prefWidth="23.0" text="inrate" />
+                  <TableColumn fx:id="outrateColumn" minWidth="0.0" prefWidth="0.0" text="outrate" />
+                  <TableColumn fx:id="blockColumn" prefWidth="84.0" text="block" />
+               </columns>
+            </TableView>
          </children>
-      </VBox>
-   </center>
+      </GridPane>
+   </top>
 </View>

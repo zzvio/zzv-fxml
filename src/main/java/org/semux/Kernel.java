@@ -102,6 +102,7 @@ public class Kernel {
         this.genesis = genesis;
         this.wallet = wallet;
         this.coinbase = coinbase;
+        instance = this;
     }
 
     /**

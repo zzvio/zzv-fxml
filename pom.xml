@@ -85,6 +85,11 @@
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.graalvm</groupId>
+            <artifactId>graal-sdk</artifactId>
+            <version>1.0.0-rc7</version>
+        </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.openjfx</groupId>-->
         <!--            <artifactId>javafx-media</artifactId>-->
@@ -354,6 +359,16 @@
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
             <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>6.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -1034,6 +1049,8 @@
                         <list>javafx.beans.property.SimpleBooleanProperty</list>
                         <list>io.zzv.model.Debug</list>
                         <list>io.zzv.debug.KernelFunc</list>
+                        <list>io.zzv.debug.KernelFunc.startKernel</list>
+                        <list>io.zzv.debug.KernelFunc.stopKernel</list>
                     </reflectionList>
                     <attachList>
                         <list>display</list>
@@ -1055,7 +1072,7 @@
                         <nativeImageArg>-H:+ReportExceptionStackTraces</nativeImageArg>
                         <nativeImageArg>-R:-InstallSegfaultHandler</nativeImageArg>
                         <nativeImageArg>--enable-all-security-services</nativeImageArg>
-                        <nativeImageArg>--trace-class-initialization=sun.instrument.InstrumentationImpl</nativeImageArg>
+                        <nativeImageArg>--initialize-at-build-time=sun.instrument.InstrumentationImpl</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=io.netty</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=io.zzv</nativeImageArg>
@@ -1112,6 +1129,8 @@
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.ec.CustomNamedCurves
                         </nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
+                        <nativeImageArg>--language:js</nativeImageArg>
+<!--                        <nativeImageArg>&#45;&#45;pgo-instrument</nativeImageArg>-->
                     </nativeImageArgs>
 
                 </configuration>

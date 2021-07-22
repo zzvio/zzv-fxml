@@ -7,13 +7,30 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<View fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.HomePresenter">
+<View fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.HomePresenter">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="label" text="View 1" />
             <Button mnemonicParsing="false" onAction="#buttonClick" text="Change the World!">
+               <graphic>
+                  <Icon content="LANGUAGE" />
+               </graphic>
+            </Button>
+            <Label id="lbl_js" fx:id="lbl_jsl" text="Java Script" />
+            <Button id="btn_js" mnemonicParsing="false" onAction="#buttonJsClick" text="Click btn_js">
+               <graphic>
+                  <Icon content="LANGUAGE" />
+               </graphic>
+            </Button>
+            <Label id="lbl_startKernel" fx:id="lbl_startLabel" text="Click to Start" />
+            <Button id="btn_startKernel" mnemonicParsing="false" onAction="#buttonStartClick" text="Start Kernel">
+               <graphic>
+                  <Icon content="LANGUAGE" />
+               </graphic>
+            </Button>
+            <Label id="lbl_stopKernel" fx:id="lbl_stopLabel" text="Click to Stop" />
+            <Button id="btn_stopKernel" mnemonicParsing="false" onAction="#buttonStopClick" text="Stop Kernel">
                <graphic>
                   <Icon content="LANGUAGE" />
                </graphic>
