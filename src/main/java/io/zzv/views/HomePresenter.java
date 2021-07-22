@@ -1,7 +1,9 @@
 package io.zzv.views;
 
-import org.graalvm.polyglot.Context;
-import org.graalvm.polyglot.Engine;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.graalvm.polyglot.*;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
@@ -22,8 +24,7 @@ public class HomePresenter {
   @FXML private Label lbl_startLabel;
   @FXML private Label lbl_stopLabel;
 
-  /** A GraalVM engine shared between multiple JavaScript contexts. */
-  private final Engine sharedEngine = Engine.newBuilder().build();
+  private final CharSequence jsScript = "print('Hello from polyglot world JavaScript!');";
 
   public void initialize() {
     home.showingProperty()
@@ -50,9 +51,10 @@ public class HomePresenter {
   @FXML
   void buttonJsClick() {
     System.out.println("Hello before polyglot world Java!");
-    try (Context context = Context.create()) {
+    final long start = System.nanoTime();
 
-      context.eval("js", "print('Hello from polyglot world JavaScript!');");
+    try(Context context = Context.create()){
+                context.eval("js", jsScript);
       //        context.eval("ruby", "puts 'Hello polyglot world Ruby!'");
       //        context.eval("R", "print('Hello polyglot world R!');");
       //        context.eval("python", "print('Hello polyglot world Python!');");
@@ -60,7 +62,10 @@ public class HomePresenter {
       lbl_jsl.setText("Error - " + ex.getMessage());
       return;
     }
-    lbl_jsl.setText("Hello after plyglot world Java!!!");
+    final long finish = System.nanoTime();
+    final long nanos = finish - start;
+
+    lbl_jsl.setText("Hello after plyglot world Java!!! - in nanos: " + nanos);
   }
 
   @FXML

@@ -1130,6 +1130,7 @@
                         </nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
                         <nativeImageArg>--language:js</nativeImageArg>
+<!--                        <nativeImageArg>&#45;&#45;pgo-instrument</nativeImageArg>-->
                     </nativeImageArgs>
 
                 </configuration>
