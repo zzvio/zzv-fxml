@@ -12,7 +12,7 @@ RUN cd /root && \
     git clone --depth 1 --branch master git@github.com:zzvio/zzv-fxml.git ${githubDir}
 
 RUN cd $bitbucketDir && \
-    rsync -a . $githubDir --exclude .git --exclude .ssh --delete 
+    rsync -a . $githubDir --exclude .git --exclude .github --exclude .ssh --delete 
 RUN cd $githubDir && \
     git add . && \
     git commit -m "Added new version from pipeline"; \

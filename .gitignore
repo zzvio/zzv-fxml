@@ -88,4 +88,4 @@ hs_err_pid*
 log/
 chaindata/
 wallet/
-
+dev/

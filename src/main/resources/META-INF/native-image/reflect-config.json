@@ -77,6 +77,16 @@
   "allPublicConstructors":true
 },
 {
+  "name":"com.gluonhq.charm.glisten.control.TextField",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.gluonhq.charm.glisten.control.TextInput",
+  "allDeclaredMethods":true
+},
+{
   "name":"com.gluonhq.charm.glisten.mvc.View",
   "allDeclaredMethods":true,
   "allPublicConstructors":true,
@@ -92,6 +102,34 @@
 },
 {
   "name":"com.mycompany.sample.MainFX",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.AESCipher$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DHParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA384",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.TlsKeyMaterialGenerator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.TlsMasterSecretGenerator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.TlsPrfGenerator$V12",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -135,6 +173,10 @@
   "methods":[{"name":"getFactory","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.javafx.fxml.builder.web.WebViewBuilder",
+  "allPublicMethods":true
+},
+{
   "name":"com.sun.javafx.logging.PrintLogger",
   "methods":[{"name":"createInstance","parameterTypes":[] }]
 },
@@ -153,6 +195,9 @@
 {
   "name":"com.sun.javafx.tk.quantum.QuantumToolkit",
   "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.webkit.theme.ScrollBarWidget"
 },
 {
   "name":"com.sun.management.GarbageCollectorMXBean",
@@ -199,6 +244,10 @@
   "allPublicConstructors":true
 },
 {
+  "name":"com.sun.media.jfxmediaimpl.platform.gstreamer.GSTPlatform",
+  "methods":[{"name":"getPlatformInstance","parameterTypes":[] }]
+},
+{
   "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -222,6 +271,10 @@
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
+  "name":"com.sun.prism.shader.DrawPgram_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
   "name":"com.sun.prism.shader.FillCircle_Color_Loader",
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
@@ -230,7 +283,15 @@
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
+  "name":"com.sun.prism.shader.FillPgram_LinearGradient_PAD_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
   "name":"com.sun.prism.shader.FillRoundRect_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Mask_TextureRGB_Loader",
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
@@ -251,6 +312,14 @@
 },
 {
   "name":"com.sun.prism.shader.Texture_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Texture_LinearGradient_PAD_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Texture_RadialGradient_PAD_Loader",
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
@@ -699,10 +768,16 @@
   "name":"java.security.AlgorithmParametersSpi"
 },
 {
+  "name":"java.security.KeyStoreSpi"
+},
+{
   "name":"java.security.MessageDigestSpi"
 },
 {
   "name":"java.security.SecureRandomParameters"
+},
+{
+  "name":"java.security.cert.CertStoreParameters"
 },
 {
   "name":"java.security.cert.PKIXRevocationChecker"
@@ -712,6 +787,12 @@
 },
 {
   "name":"java.security.interfaces.DSAPublicKey"
+},
+{
+  "name":"java.security.interfaces.ECPrivateKey"
+},
+{
+  "name":"java.security.interfaces.ECPublicKey"
 },
 {
   "name":"java.security.interfaces.RSAPrivateKey"
@@ -745,6 +826,11 @@
 },
 {
   "name":"javafx.fxml.FXMLLoader"
+},
+{
+  "name":"javafx.geometry.Insets",
+  "allPublicMethods":true,
+  "allPublicConstructors":true
 },
 {
   "name":"javafx.geometry.Pos",
@@ -792,6 +878,16 @@
 },
 {
   "name":"javafx.scene.control.Labeled",
+  "allDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.control.ProgressBar",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ProgressIndicator",
   "allDeclaredMethods":true
 },
 {
@@ -848,6 +944,12 @@
   ]
 },
 {
+  "name":"javafx.scene.layout.HBox",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"javafx.scene.layout.Pane",
   "allDeclaredMethods":true
 },
@@ -875,6 +977,18 @@
   "name":"javafx.scene.shape.Circle"
 },
 {
+  "name":"javafx.scene.shape.LineTo"
+},
+{
+  "name":"javafx.scene.shape.MoveTo"
+},
+{
+  "name":"javafx.scene.shape.Path"
+},
+{
+  "name":"javafx.scene.shape.PathElement"
+},
+{
   "name":"javafx.scene.shape.Rectangle"
 },
 {
@@ -893,6 +1007,10 @@
   "name":"javafx.scene.transform.Transform"
 },
 {
+  "name":"javafx.scene.web.WebView",
+  "allDeclaredMethods":true
+},
+{
   "name":"javafx.stage.PopupWindow"
 },
 {
@@ -900,6 +1018,20 @@
 },
 {
   "name":"javafx.stage.Window"
+},
+{
+  "name":"javax.imageio.spi.ImageReaderSpi"
+},
+{
+  "name":"javax.imageio.spi.ImageReaderWriterSpi",
+  "methods":[
+    {"name":"getFileSuffixes","parameterTypes":[] }, 
+    {"name":"getFormatNames","parameterTypes":[] }, 
+    {"name":"getMIMETypes","parameterTypes":[] }
+  ]
+},
+{
+  "name":"javax.imageio.spi.ImageWriterSpi"
 },
 {
   "name":"javax.management.MBeanOperationInfo",
@@ -1835,6 +1967,14 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"org.bouncycastle.jcajce.provider.asymmetric.edec.SignatureSpi$Ed25519",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.bouncycastle.jcajce.provider.asymmetric.edec.SignatureSpi$Ed448",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"org.bouncycastle.jcajce.provider.digest.Blake2b$Blake2b256",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -2294,11 +2434,23 @@
   "name":"sun.security.pkcs.SignerInfo[]"
 },
 {
+  "name":"sun.security.pkcs12.PKCS12KeyStore",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.pkcs12.PKCS12KeyStore$DualFormatPKCS12",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.security.provider.DRBG",
   "methods":[{"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
 },
 {
   "name":"sun.security.provider.DSA$SHA1withDSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.DSA$SHA224withDSA",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -2314,6 +2466,14 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"sun.security.provider.JavaKeyStore$DualFormatJKS",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.JavaKeyStore$JKS",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.security.provider.MD5",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -2326,7 +2486,15 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"sun.security.provider.SHA2$SHA224",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA5$SHA384",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -2338,11 +2506,55 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"sun.security.provider.certpath.CollectionCertStore",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.cert.CertStoreParameters"] }]
+},
+{
+  "name":"sun.security.provider.certpath.PKIXCertPathValidator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.certpath.SunCertPathBuilder",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.PSSParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.security.rsa.RSAKeyFactory$Legacy",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"sun.security.rsa.RSAPSSSignature",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA224withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.security.rsa.RSASignature$SHA256withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA384withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA512withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.KeyManagerFactoryImpl$SunX509",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl$DefaultSSLContext",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.TrustManagerFactoryImpl$PKIXFactory",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -2376,11 +2588,23 @@
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
 },
 {
+  "name":"sun.security.x509.IssuerAlternativeNameExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
   "name":"sun.security.x509.KeyUsageExtension",
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
 },
 {
   "name":"sun.security.x509.NetscapeCertTypeExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.OCSPNoCheckExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.PrivateKeyUsageExtension",
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
 },
 {

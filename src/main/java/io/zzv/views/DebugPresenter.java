@@ -30,7 +30,10 @@ public class DebugPresenter {
         debugView.setShowTransitionFactory(BounceInRightTransition::new);
 
         FloatingActionButton fab = new FloatingActionButton(MaterialDesignIcon.INFO.text,
-                e -> System.out.println("Info"));
+                e -> {
+
+            System.out.println("Info");
+        });
         fab.showOn(debugView);
 
         debugView.showingProperty().addListener((obs, oldValue, newValue) -> {

@@ -4257,7 +4257,9 @@
   ]},
   "bundles":[
     {"name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle"}, 
+    {"name":"com.sun.webkit.graphics.Images"}, 
     {"name":"com/sun/javafx/scene/control/skin/resources/controls"}, 
-    {"name":"org/semux/cli/messages"}
+    {"name":"org/semux/cli/messages"}, 
+    {"name":"sun.awt.resources.awt"}
   ]
 }
