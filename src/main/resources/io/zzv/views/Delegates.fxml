@@ -7,7 +7,7 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.web.WebView?>
+<!--<?import javafx.scene.web.WebView?>-->
 
 <View fx:id="delegates" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Delegates.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.DelegatesPresenter">
    <top>
@@ -23,6 +23,6 @@
       </VBox>
    </top>
    <center>
-      <WebView fx:id="webView" prefHeight="550.0" prefWidth="900.0" />
+<!--      <WebView fx:id="webView" prefHeight="550.0" prefWidth="900.0" />-->
    </center>
 </View>

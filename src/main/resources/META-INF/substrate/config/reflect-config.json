@@ -85,6 +85,16 @@
   "allPublicConstructors":true
 },
 {
+  "name":"com.gluonhq.charm.glisten.control.TextField",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.gluonhq.charm.glisten.control.TextInput",
+  "allDeclaredMethods":true
+},
+{
   "name":"com.gluonhq.charm.glisten.mvc.View",
   "allDeclaredMethods":true,
   "allPublicConstructors":true,
@@ -104,6 +114,10 @@
 },
 {
   "name":"com.sun.crypto.provider.DHParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA256",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -176,6 +190,10 @@
   "methods":[{"name":"getFactory","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.javafx.fxml.builder.web.WebViewBuilder",
+  "allPublicMethods":true
+},
+{
   "name":"com.sun.javafx.logging.PrintLogger",
   "methods":[{"name":"createInstance","parameterTypes":[] }]
 },
@@ -194,6 +212,9 @@
 {
   "name":"com.sun.javafx.tk.quantum.QuantumToolkit",
   "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.webkit.theme.ScrollBarWidget"
 },
 {
   "name":"com.sun.management.GarbageCollectorMXBean",
@@ -238,6 +259,10 @@
 {
   "name":"com.sun.management.internal.OperatingSystemImpl",
   "allPublicConstructors":true
+},
+{
+  "name":"com.sun.media.jfxmediaimpl.platform.gstreamer.GSTPlatform",
+  "methods":[{"name":"getPlatformInstance","parameterTypes":[] }]
 },
 {
   "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
@@ -348,6 +373,10 @@
 },
 {
   "name":"com.sun.scenario.effect.impl.sw.sse.SSEBoxShadowPeer",
+  "methods":[{"name":"<init>","parameterTypes":["com.sun.scenario.effect.FilterContext","com.sun.scenario.effect.impl.Renderer","java.lang.String"] }]
+},
+{
+  "name":"com.sun.scenario.effect.impl.sw.sse.SSELinearConvolveShadowPeer",
   "methods":[{"name":"<init>","parameterTypes":["com.sun.scenario.effect.FilterContext","com.sun.scenario.effect.impl.Renderer","java.lang.String"] }]
 },
 {
@@ -765,6 +794,9 @@
   "name":"java.security.SecureRandomParameters"
 },
 {
+  "name":"java.security.cert.CertStoreParameters"
+},
+{
   "name":"java.security.cert.PKIXRevocationChecker"
 },
 {
@@ -813,6 +845,11 @@
   "name":"javafx.fxml.FXMLLoader"
 },
 {
+  "name":"javafx.geometry.Insets",
+  "allPublicMethods":true,
+  "allPublicConstructors":true
+},
+{
   "name":"javafx.geometry.Pos",
   "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
@@ -858,6 +895,16 @@
 },
 {
   "name":"javafx.scene.control.Labeled",
+  "allDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.control.ProgressBar",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ProgressIndicator",
   "allDeclaredMethods":true
 },
 {
@@ -914,6 +961,12 @@
   ]
 },
 {
+  "name":"javafx.scene.layout.HBox",
+  "allDeclaredMethods":true,
+  "allPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"javafx.scene.layout.Pane",
   "allDeclaredMethods":true
 },
@@ -941,6 +994,18 @@
   "name":"javafx.scene.shape.Circle"
 },
 {
+  "name":"javafx.scene.shape.LineTo"
+},
+{
+  "name":"javafx.scene.shape.MoveTo"
+},
+{
+  "name":"javafx.scene.shape.Path"
+},
+{
+  "name":"javafx.scene.shape.PathElement"
+},
+{
   "name":"javafx.scene.shape.Rectangle"
 },
 {
@@ -957,6 +1022,10 @@
 },
 {
   "name":"javafx.scene.transform.Transform"
+},
+{
+  "name":"javafx.scene.web.WebView",
+  "allDeclaredMethods":true
 },
 {
   "name":"javafx.stage.PopupWindow"
@@ -2450,7 +2519,15 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"sun.security.provider.certpath.CollectionCertStore",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.cert.CertStoreParameters"] }]
+},
+{
   "name":"sun.security.provider.certpath.PKIXCertPathValidator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.certpath.SunCertPathBuilder",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {

@@ -21,23 +21,23 @@ public class DelegatesPresenter {
 
     @FXML
     private TextField textUrl;
-    @FXML
-    private WebView webView;
-    private WebEngine webEngine;
+//    @FXML
+//    private WebView webView;
+//    private WebEngine webEngine;
 
     @FXML
     private ProgressBar progressBar;
 
     private void loadUrl(){
-        try {
-            final WebEngine webEngine = webView.getEngine();
-            webEngine.load(textUrl.getText());
-
-        }catch (Exception ex){
-            System.out.println("Url Problem:" + ex.getCause().getMessage());
-            ex.printStackTrace();
-            return;
-        }
+//        try {
+//            final WebEngine webEngine = webView.getEngine();
+//            webEngine.load(textUrl.getText());
+//
+//        }catch (Exception ex){
+//            System.out.println("Url Problem:" + ex.getCause().getMessage());
+//            ex.printStackTrace();
+//            return;
+//        }
         System.out.println("WebView -> " + textUrl.getText());
     }
 
@@ -45,21 +45,21 @@ public class DelegatesPresenter {
         delegates.setShowTransitionFactory(BounceInRightTransition::new);
 
         textUrl.setText("https://google.com");
-        webEngine = webView.getEngine();
-        // Removing right clicks
-        webView.setContextMenuEnabled(false);
-        // Updating progress bar using binding property
-        progressBar.progressProperty().bind(webEngine.getLoadWorker().progressProperty());
-        webEngine.getLoadWorker().stateProperty().addListener(
-                (ov, oldState, newState) -> {
-                    if (newState == Worker.State.SUCCEEDED) {
-                        // Hide progress bar when page is ready
-                        progressBar.setVisible(false);
-                    } else {
-                        //Showing progress bar
-                        progressBar.setVisible(true);
-                    }
-                });
+//        webEngine = webView.getEngine();
+//        // Removing right clicks
+//        webView.setContextMenuEnabled(false);
+//        // Updating progress bar using binding property
+//        progressBar.progressProperty().bind(webEngine.getLoadWorker().progressProperty());
+//        webEngine.getLoadWorker().stateProperty().addListener(
+//                (ov, oldState, newState) -> {
+//                    if (newState == Worker.State.SUCCEEDED) {
+//                        // Hide progress bar when page is ready
+//                        progressBar.setVisible(false);
+//                    } else {
+//                        //Showing progress bar
+//                        progressBar.setVisible(true);
+//                    }
+//                });
 
         FloatingActionButton fab = new FloatingActionButton(MaterialDesignIcon.INFO.text,
                 e -> {
