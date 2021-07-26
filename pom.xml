@@ -96,11 +96,11 @@
         <!--            <version>${javafx.version}</version>-->
         <!--        </dependency>-->
         <!-- -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-web</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-web</artifactId>-->
+<!--            <version>${javafx.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -1051,7 +1051,7 @@
                         <list>io.zzv.debug.KernelFunc</list>
                         <list>io.zzv.debug.KernelFunc.startKernel</list>
                         <list>io.zzv.debug.KernelFunc.stopKernel</list>
-                        <list>javafx.scene.web.WebView</list>
+<!--                        <list>javafx.scene.web.WebView</list>-->
                         <list>com.gluonhq.charm.glisten.control.TextField</list>
                     </reflectionList>
                     <attachList>

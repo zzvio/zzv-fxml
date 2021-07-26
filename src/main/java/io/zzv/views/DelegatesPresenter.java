@@ -11,8 +11,9 @@ import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
+
+//import javafx.scene.web.WebEngine;
+//import javafx.scene.web.WebView;
 
 public class DelegatesPresenter {
 
