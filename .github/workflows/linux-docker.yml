@@ -23,8 +23,8 @@ jobs:
 
       - name: Copy native app to zzv-apt-package
         run: |
-          mkdir -p src/linux/zzv_1.0.1_amd64/usr/local/bin/;
-          cp target/gluonfx/x86_64-linux/semux-core src/linux/zzv_1.0.1_amd64/usr/local/bin/semux-core
+          mkdir -p src/linux/zzv_1.1.1_amd64/usr/local/bin/;
+          cp target/gluonfx/x86_64-linux/semux-core src/linux/zzv_1.1.1_amd64/usr/local/bin/semux-core
 
       - name: Build apt-repository
         run: cd src/linux && bash gpg.sh && bash package.sh
