@@ -12,7 +12,7 @@ jobs:
 
       - uses: zzvio/setup-graalvm@5.3
         with:
-          graalvm: '21.3.0-dev-20210721_1948'
+          graalvm: '21.3.0-dev-20210729_2115'
           java: java11
 
       # https://developer.apple.com
