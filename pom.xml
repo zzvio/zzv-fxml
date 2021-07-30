@@ -22,7 +22,7 @@
         <attach.version>4.0.11</attach.version>
         <connect.version>2.0.1</connect.version>
         <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
-        <gluonfx.maven.plugin.version>1.0.4-SNAPSHOT</gluonfx.maven.plugin.version>
+        <gluonfx.maven.plugin.version>1.0.3</gluonfx.maven.plugin.version>
         <charm.version>6.0.6</charm.version>
         <main.class>org.semux.Main</main.class>
     </properties>
@@ -1132,6 +1132,7 @@
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.ec.CustomNamedCurves
                         </nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
+<!--                        <nativeImageArg>&#45;&#45;language:nfi</nativeImageArg>-->
                         <nativeImageArg>--language:js</nativeImageArg>
 <!--                        <nativeImageArg>&#45;&#45;pgo-instrument</nativeImageArg>-->
                     </nativeImageArgs>
