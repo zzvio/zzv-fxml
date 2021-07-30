@@ -17,12 +17,12 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
         <skip.git.info>false</skip.git.info>
-        <javafx.version>17-ea+14</javafx.version>
+        <javafx.version>16</javafx.version>
         <glisten.afterburner.version>2.0.5</glisten.afterburner.version>
         <attach.version>4.0.11</attach.version>
         <connect.version>2.0.1</connect.version>
         <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
-        <gluonfx.maven.plugin.version>1.0.4-SNAPSHOT</gluonfx.maven.plugin.version>
+        <gluonfx.maven.plugin.version>1.0.0</gluonfx.maven.plugin.version>
         <charm.version>6.0.6</charm.version>
         <main.class>org.semux.Main</main.class>
     </properties>
@@ -45,18 +45,19 @@
         <url>https://github.com/semuxproject/semux-core/issues</url>
     </issueManagement>
 
-   <pluginRepositories>
+    <pluginRepositories>
         <pluginRepository>
-            <id>sonatype</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>bintray</id>
+            <url>https://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
-	
+
+
     <dependencies>
         <dependency>
-            <groupId>com.ea.async</groupId>
-            <artifactId>ea-async</artifactId>
-            <version>1.2.3</version>
+            <groupId>org.fusesource.leveldbjni</groupId>
+            <artifactId>leveldbjni-linux64</artifactId>
+            <version>1.8</version>
         </dependency>
 
         <dependency>
@@ -85,22 +86,17 @@
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.graalvm</groupId>
-            <artifactId>graal-sdk</artifactId>
-            <version>1.0.0-rc7</version>
-        </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.openjfx</groupId>-->
         <!--            <artifactId>javafx-media</artifactId>-->
         <!--            <version>${javafx.version}</version>-->
         <!--        </dependency>-->
         <!-- -->
-<!--        <dependency>-->
-<!--            <groupId>org.openjfx</groupId>-->
-<!--            <artifactId>javafx-web</artifactId>-->
-<!--            <version>${javafx.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -361,16 +357,6 @@
             <version>3.4.4</version>
         </dependency>
         <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-tree</artifactId>
-            <version>6.1</version>
-        </dependency>
-        <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
             <version>2.12.3</version>
@@ -612,10 +598,10 @@
                         <goals>
                             <goal>validateRevision</goal>
                         </goals>
-                        <phase>package</phase></execution>
+                        <phase>package</phase>
+                    </execution>
                 </executions>
                 <configuration>
-                    <failOnNoGitDirectory>false</failOnNoGitDirectory>
                     <skip>${skip.git.info}</skip>
                     <abbrevLength>7</abbrevLength>
                     <verbose>false</verbose>
@@ -842,15 +828,9 @@
                 <artifactId>gluonfx-maven-plugin</artifactId>
                 <version>${gluonfx.maven.plugin.version}</version>
                 <configuration>
-                    <verbose>true</verbose>
                     <target>${gluonfx.target}</target>
                     <mainClass>${main.class}</mainClass>
                     <enableSWRendering>true</enableSWRendering>
-	       	<runtimeArgs>
-                        <list>--network=mainnet</list>
-                        <list>--gui</list>
-                        <list>--log=FINEST</list>
-                    </runtimeArgs>
                     <bundlesList>
                         <list>org.semux.cli.messages</list>
                         <list>org.semux.gui.messages</list>
@@ -1030,36 +1010,12 @@
                         <list>io.zzv.views.ReceiveView</list>
                         <list>io.zzv.views.SendView</list>
                         <list>io.zzv.views.TransactionsView</list>
-                        <list>io.zzv.views.DebugPresenter</list>
-                        <list>io.zzv.views.DebugView</list>
-                        <List>org.semux.Launcher</List>
-                        <list>org.semux.net.ChannelManager</list>
-                        <list>org.semux.net.Channel</list>
-                        <list>org.semux.core.BftManager</list>
-                        <list>org.semux.consensus.SemuxSync</list>
-                        <list>org.semux.consensus.SemuxBft</list>
-                        <list>java.net.URL</list>
-                        <list>javafx.fxml.FXMLLoader</list>
-                        <list>javafx.scene.control.TableView</list>
-                        <list>javafx.scene.control.TableColumn</list>
-                        <list>javafx.scene.control.TableColumnBase</list>
-                        <list>javafx.beans.property.StringProperty</list>
-                        <list>javafx.beans.property.BooleanProperty</list>
-                        <list>javafx.beans.property.SimpleStringProperty</list>
-                        <list>javafx.beans.property.SimpleBooleanProperty</list>
-                        <list>io.zzv.model.Debug</list>
-                        <list>io.zzv.debug.KernelFunc</list>
-                        <list>io.zzv.debug.KernelFunc.startKernel</list>
-                        <list>io.zzv.debug.KernelFunc.stopKernel</list>
-<!--                        <list>javafx.scene.web.WebView</list>-->
-                        <list>com.gluonhq.charm.glisten.control.TextField</list>
                     </reflectionList>
                     <attachList>
                         <list>display</list>
                         <list>lifecycle</list>
                         <list>statusbar</list>
                         <list>storage</list>
-                        <list>web</list>
                     </attachList>
                     <nativeImageArgs>
                         <nativeImageArg>-g</nativeImageArg>
@@ -1075,7 +1031,7 @@
                         <nativeImageArg>-H:+ReportExceptionStackTraces</nativeImageArg>
                         <nativeImageArg>-R:-InstallSegfaultHandler</nativeImageArg>
                         <nativeImageArg>--enable-all-security-services</nativeImageArg>
-                        <nativeImageArg>--initialize-at-build-time=sun.instrument.InstrumentationImpl</nativeImageArg>
+                        <nativeImageArg>--trace-class-initialization=sun.instrument.InstrumentationImpl</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=io.netty</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=io.zzv</nativeImageArg>
@@ -1132,8 +1088,6 @@
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.ec.CustomNamedCurves
                         </nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
-                        <nativeImageArg>--language:js</nativeImageArg>
-<!--                        <nativeImageArg>&#45;&#45;pgo-instrument</nativeImageArg>-->
                     </nativeImageArgs>
 
                 </configuration>
