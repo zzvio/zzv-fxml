@@ -30,6 +30,12 @@ jobs:
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
+        env:
+          APP_CERT_NAME: ${{ secrets.GLUON_MACOS_APP_CERT_NAME }}
+          PRIV_KEY: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
+          INSTALLER_CERT_NAME: ${{ secrets.GLUON_MACOS_INSTALLER_CERT_NAME }}
+          APPSTORE_KEY_ID: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
+          APPSTORE_ISSUER_ID: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
 
       - name: Codesign
         env:
