@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: zzvio/setup-graalvm@5.3
-        with:
-          graalvm: '21.3.0-dev-20210729_2115'
-          java: java11
+      - name: Setup Gluon's GraalVM Installation
+        uses: gluonhq/setup-graalvm@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # https://developer.apple.com
       # - uses: Apple-Actions/import-codesign-certs@v1
