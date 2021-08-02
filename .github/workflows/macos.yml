@@ -55,21 +55,20 @@ jobs:
           INSTALLER_CERT_NAME: ${{ secrets.GLUON_MACOS_INSTALLER_CERT_NAME }}
         run: bash -x src/osx/osx.sh
 
-      - name: Make staging directory
-        run: mkdir staging
+      # - name: Make staging directory
+      #   run: mkdir staging
 
-      - name: Copy native clients to staging
-        run: cp -r target/gluonfx/x86_64-darwin/semux-core staging
+      # - name: Copy native clients to staging
+      #   run: cp -r target/gluonfx/x86_64-darwin/semux-core staging
 
-      - name: Upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: staging
+      # - name: Upload
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: Package
+      #     path: staging
 
       - name: Upload to Mac store
         env: 
           APPSTORE_KEY_ID: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
           APPSTORE_ISSUER_ID: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
         run: bash -x src/osx/upload.sh
-
