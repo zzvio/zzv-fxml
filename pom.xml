@@ -1068,7 +1068,7 @@
                         <nativeImageArg>--report-unsupported-elements-at-runtime</nativeImageArg>
                         <nativeImageArg>--allow-incomplete-classpath</nativeImageArg>
                         <nativeImageArg>--native-image-info</nativeImageArg>
-                        <nativeImageArg>-H:-InternalSymbolsAreGlobal</nativeImageArg>
+                        <!-- <nativeImageArg>-H:-InternalSymbolsAreGlobal</nativeImageArg> -->
                         <nativeImageArg>-H:TraceClassInitialization=true</nativeImageArg>
                         <nativeImageArg>-H:+ReportUnsupportedElementsAtRuntime</nativeImageArg>
                         <nativeImageArg>-H:-AllowVMInspection</nativeImageArg>
