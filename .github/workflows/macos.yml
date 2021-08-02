@@ -28,6 +28,9 @@ jobs:
       #     p12-file-base64: ${{ secrets.GLUON_MACOS_APP_CERT_FILE_BASE64 }}
       #     p12-password: ${{ secrets.GLUON_MACOS_CERTIFICATES_PASSWORD }}
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Codesign
         env:
           APP_CERT_NAME: ${{ secrets.GLUON_MACOS_APP_CERT_NAME }}
