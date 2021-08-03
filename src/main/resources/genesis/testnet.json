@@ -6,31 +6,31 @@
     "data": "semux",
     "premine": [
         {
-            "address": "0xc583b6ad1d1cccfc00ae9113db6408f022822b20",
+            "address": "0x0930c852e225347a109d158725f82fc28f0c4648",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0xc5f32c2231ff2b60cdfa9c0d3a9c2e71774de472",
+            "address": "0x52729539c3c4571b19d2e108be1150dcf07ed700",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0xfe81ddefe30d7ab28f2ce73bb37d3d42603c4ddf",
+            "address": "0x2a5d739901aa7b7377ac27c80e7babfb061203d4",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0x837c1e6ceca4ccad20e59849cb7a9678394f7313",
+            "address": "0x65d06011e5371db689b9c0d5b76d9bd016072386",
             "amount": 1000000000000000,
             "note": "test"
         }
     ],
     "delegates": {
-        "zzv1": "0xc583b6ad1d1cccfc00ae9113db6408f022822b20",
-        "zzv2": "0xc5f32c2231ff2b60cdfa9c0d3a9c2e71774de472",
-        "zzv3": "0xfe81ddefe30d7ab28f2ce73bb37d3d42603c4ddf",
-        "zzv4": "0x837c1e6ceca4ccad20e59849cb7a9678394f7313"
+        "zzv1": "0x0930c852e225347a109d158725f82fc28f0c4648", // htu.io
+        "zzv2": "0x52729539c3c4571b19d2e108be1150dcf07ed700", // icte.jp
+        "zzv3": "0x2a5d739901aa7b7377ac27c80e7babfb061203d4", // icte.io
+        "zzv4": "0x65d06011e5371db689b9c0d5b76d9bd016072386"  // nyqex.io
     },
     "config": {
         

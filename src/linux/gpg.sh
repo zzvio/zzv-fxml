@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -p ~/.gnupg
 chown -R $(whoami) ~/.gnupg/
-chmod 600 ~/.gnupg/*
+sudo rm -r ~/.gnupg/*
 chmod 700 ~/.gnupg
 echo "cert-digest-algo SHA256" >> ~/.gnupg/gpg.conf
 echo "digest-algo SHA256" >> ~/.gnupg/gpg.conf
@@ -24,6 +24,6 @@ cat > $KEYNAME.batch <<EOF
  %echo done
 EOF
 
-gpg --batch --passphrase "HashZ1TokenZ2UnitedV3" --gen-key $KEYNAME.batch
+gpg --batch --passphrase ${GPG_PASS} --gen-key $KEYNAME.batch
 gpg --no-default-keyring --secret-keyring ${KEYNAME}.key --keyring ${KEYNAME}.pub --list-secret-keys
 gpg --import ${KEYNAME}.pub

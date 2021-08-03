@@ -4,11 +4,11 @@ KEYNAME="Hash-Token-United"
 CWD=$(pwd)
 
 # Make Deb
-sudo dpkg-deb --build --root-owner-group zzv_1.0.1_amd64
+sudo dpkg-deb --build --root-owner-group zzv_1.1.1_amd64
 
 # Make apt repo
 mkdir -p zzv-view/amd64
-mv zzv_1.0.1_amd64.deb zzv-view/amd64/
+mv zzv_1.1.1_amd64.deb zzv-view/amd64/
 cd zzv-view
 rm -f InRelease  KEY.gpg  Packages  Packages.gz  Release  Release.gpg
 
