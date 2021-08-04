@@ -1068,12 +1068,9 @@
                         <nativeImageArg>--report-unsupported-elements-at-runtime</nativeImageArg>
                         <nativeImageArg>--allow-incomplete-classpath</nativeImageArg>
                         <nativeImageArg>--native-image-info</nativeImageArg>
-                        <!-- <nativeImageArg>-H:-InternalSymbolsAreGlobal</nativeImageArg> -->
                         <nativeImageArg>-H:TraceClassInitialization=true</nativeImageArg>
                         <nativeImageArg>-H:+ReportUnsupportedElementsAtRuntime</nativeImageArg>
-                        <nativeImageArg>-H:-AllowVMInspection</nativeImageArg>
                         <nativeImageArg>-H:+ReportExceptionStackTraces</nativeImageArg>
-                        <nativeImageArg>-R:-InstallSegfaultHandler</nativeImageArg>
                         <nativeImageArg>--enable-all-security-services</nativeImageArg>
                         <nativeImageArg>--initialize-at-build-time=sun.instrument.InstrumentationImpl</nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.crypto.</nativeImageArg>
@@ -1133,7 +1130,6 @@
                         </nativeImageArg>
                         <nativeImageArg>--initialize-at-run-time=org.bouncycastle.math.ec.ECPoint</nativeImageArg>
 <!--                        <nativeImageArg>&#45;&#45;language:nfi</nativeImageArg>-->
-                        <nativeImageArg>--language:js</nativeImageArg>
 <!--                        <nativeImageArg>&#45;&#45;pgo-instrument</nativeImageArg>-->
                     </nativeImageArgs>
 

@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, macOS, X64]
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -15,18 +15,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # https://developer.apple.com
-      # - uses: Apple-Actions/import-codesign-certs@v1
-      #   with:
-      #     p12-file-base64: ${{ secrets.GLUON_IOS_CERTIFICATES_FILE_BASE64 }}
-      #     p12-password: ${{ secrets.GLUON_IOS_CERTIFICATES_PASSWORD }}
+      https://developer.apple.com
+      - uses: Apple-Actions/import-codesign-certs@v1
+        with:
+          p12-file-base64: ${{ secrets.GLUON_IOS_CERTIFICATES_FILE_BASE64 }}
+          p12-password: ${{ secrets.GLUON_IOS_CERTIFICATES_PASSWORD }}
 
-      # - uses: Apple-Actions/download-provisioning-profiles@v1
-      #   with:
-      #     bundle-id: io.zzv.view
-      #     issuer-id: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
-      #     api-key-id: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
-      #     api-private-key: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
+      - uses: Apple-Actions/download-provisioning-profiles@v1
+        with:
+          bundle-id: io.zzv.view
+          issuer-id: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
+          api-private-key: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
 
       - name: Gluon Build
         run: mvn -Pios gluonfx:build gluonfx:package
@@ -41,9 +41,9 @@ jobs:
           path: staging
 
 
-      # - uses: Apple-Actions/upload-testflight-build@master
-      #   with:
-      #     app-path: target/gluonfx/arm64-ios/semux-core.ipa
-      #     issuer-id: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
-      #     api-key-id: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
-      #     api-private-key: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
+      - uses: Apple-Actions/upload-testflight-build@master
+        with:
+          app-path: target/gluonfx/arm64-ios/semux-core.ipa
+          issuer-id: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
+          api-private-key: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
