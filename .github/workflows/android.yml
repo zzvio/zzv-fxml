@@ -25,7 +25,10 @@ jobs:
       #   with:
       #     fileName: 'my.keystore'
       #     encodedString: ${{ secrets.GLUON_ANDROID_KEYSTORE_BASE64 }}
-          
+
+      - name: Copy pom
+        run: cp src/android/pom.xml .
+
       - name: Gluon Build
         run: mvn -Pandroid gluonfx:build gluonfx:package
         env:
