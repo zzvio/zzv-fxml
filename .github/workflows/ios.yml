@@ -28,6 +28,9 @@ jobs:
           api-key-id: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.GLUON_IOS_APPSTORE_PRIVATE_KEY }}
 
+      - name: Configure ios
+        run: bash -x src/ios/configure.sh; cat src/ios/Default-Info.plist | grep -A1 CFBundleVersion
+
       - name: Gluon Build
         run: mvn -Pios gluonfx:build gluonfx:package
 

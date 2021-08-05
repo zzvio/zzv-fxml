@@ -5,9 +5,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.zzv.view</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>CFBundleVersionPlaceHolder</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleExecutable</key>
 	<string>semux-core</string>
 	<key>CFBundleIconName</key>
