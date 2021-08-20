@@ -5,15 +5,15 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.zzv.view</string>
 	<key>CFBundleVersion</key>
-	<string>CFBundleVersionPlaceHolder</string>
+	<string>1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>1.0</string>
 	<key>CFBundleExecutable</key>
-	<string>semux-core</string>
+	<string>Zzv-view</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleName</key>
-	<string>semux-core</string>
+	<string>Zzv-view</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

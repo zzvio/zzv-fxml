@@ -477,7 +477,7 @@ public class SemuxBft implements BftManager {
     }
 
     protected void onNewView(Proof p) {
-        logger.fine(String.format("On new_view: %s", p));
+        logger.finest(String.format("On new_view: %s", p));
 
         if (p.getHeight() == height // at same height
                 && p.getView() > view && state != State.COMMIT && state != State.FINALIZE) {// larger view

@@ -6,33 +6,33 @@
     "data": "semux",
     "premine": [
         {
-            "address": "0x0930c852e225347a109d158725f82fc28f0c4648",
+            "address": "0xb224045d28088451278f21c5f62e30291695b721",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0x52729539c3c4571b19d2e108be1150dcf07ed700",
+            "address": "0x506bb1b7973f070f50aeed684bfc847898db10cf",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0x2a5d739901aa7b7377ac27c80e7babfb061203d4",
+            "address": "0x5dbf649e6452eace56ee86a2cc1aa214e434dfee",
             "amount": 1000000000000000,
             "note": "test"
         },
         {
-            "address": "0x65d06011e5371db689b9c0d5b76d9bd016072386",
+            "address": "0xb0101f0032a380a563401cb949ab1a7e3ba0741f",
             "amount": 1000000000000000,
             "note": "test"
         }
     ],
     "delegates": {
-        "zzv1": "0x0930c852e225347a109d158725f82fc28f0c4648",
-        "zzv2": "0x52729539c3c4571b19d2e108be1150dcf07ed700",
-        "zzv3": "0x2a5d739901aa7b7377ac27c80e7babfb061203d4",
-        "zzv4": "0x65d06011e5371db689b9c0d5b76d9bd016072386" 
+        "zzv1": "0xb224045d28088451278f21c5f62e30291695b721",
+        "zzv2": "0x506bb1b7973f070f50aeed684bfc847898db10cf",
+        "zzv3": "0x5dbf649e6452eace56ee86a2cc1aa214e434dfee",
+        "zzv4": "0xb0101f0032a380a563401cb949ab1a7e3ba0741f"
     },
     "config": {
-        
+
     }
 }

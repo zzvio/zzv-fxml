@@ -7,118 +7,121 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
 
 public class ChannelJo {
 
-    private final StringProperty num;
-    private final StringProperty host;
-    private final StringProperty active;
-    private final StringProperty outbound;
-    private final StringProperty latency;
-    private final StringProperty dist;
-    private final StringProperty level;
-    private final StringProperty inrate;
-    private final StringProperty outrate;
-    private final StringProperty block;
+    private final StringProperty numProperty;
+    private final StringProperty hostProperty;
+    private final StringProperty activeProperty;
+    private final StringProperty outboundProperty;
+    private final StringProperty latencyProperty;
+    private final StringProperty distProperty;
+    private final StringProperty levelProperty;
+    private final StringProperty inrateProperty;
+    private final StringProperty outrateProperty;
+    private final StringProperty blockProperty;
 
     private Channel channel;
 
     public ChannelJo(Channel channel){
         this.channel= channel;
-        this.num = new SimpleStringProperty(""+channel.getRemotePort());
-        this.host = new SimpleStringProperty(channel.getRemoteIp());
-        this.active = new SimpleStringProperty(""+ channel.isActive());
-        this.outbound = new SimpleStringProperty(channel.isInbound()?"Input":"Output");
-        this.latency = new SimpleStringProperty(""+channel.getRemotePeer().getLatency());
-        this.dist = new SimpleStringProperty(""+channel.getRemotePeer().getClientId());
-        this.level = new SimpleStringProperty("");
-        this.inrate = new SimpleStringProperty("");
-        this.outrate = new SimpleStringProperty("");
-        this.block = new SimpleStringProperty(""+channel.getRemotePeer().getLatestBlockNumber());
+        this.numProperty = new SimpleStringProperty(""+channel.getRemotePort());
+        this.hostProperty = new SimpleStringProperty(channel.getRemoteIp());
+        this.activeProperty = new SimpleStringProperty(""+ channel.isActive());
+        this.outboundProperty = new SimpleStringProperty(channel.isInbound()?"Input":"Output");
+        this.latencyProperty = new SimpleStringProperty(""+channel.getRemotePeer().getLatency());
+        this.distProperty = new SimpleStringProperty(""+channel.getRemotePeer().getClientId());
+        this.levelProperty = new SimpleStringProperty("");
+        this.inrateProperty = new SimpleStringProperty("");
+        this.outrateProperty = new SimpleStringProperty("");
+        this.blockProperty = new SimpleStringProperty(""+channel.getRemotePeer().getLatestBlockNumber());
     }
 
     public String toString() {
         return channel.toString();
     }
 
-    public final String getNum(){ return num.get(); }
+    public final String getNum(){
+        return numProperty.get();
+    }
     public final void setNum(String value) {
-        num.set(value);
+        numProperty.set(value);
     }
     public StringProperty numProperty() {
-        return num;
+        return numProperty;
     }
 
-    public final String getHost(){ return host.get();  }
+    public final String getHost(){ return hostProperty.get();  }
     public final void setHost(String value) {
-        host.set(value);
+        hostProperty.set(value);
     }
     public StringProperty hostProperty() {
-        return host;
+        return hostProperty;
     }
 
-    public final String getActive(){ return active.get();  }
+    public final String getActive(){ return activeProperty.get();  }
     public final void setActive(String value) {
-        active.set(value);
+        activeProperty.set(value);
     }
     public StringProperty activeProperty() {
-        return active;
+        return activeProperty;
     }
 
-    public final String getOutbound(){ return outbound.get();  }
+    public final String getOutbound(){ return outboundProperty.get();  }
     public final void setOutbound(String value) {
-        outbound.set(value);
+        outboundProperty.set(value);
     }
     public StringProperty outboundProperty() {
-        return outbound;
+        return outboundProperty;
     }
 
-    public final String getLatency(){ return latency.get();  }
+    public final String getLatency(){ return latencyProperty.get();  }
     public final void setLatency(String value) {
-        latency.set(value);
+        latencyProperty.set(value);
     }
     public StringProperty latencyProperty() {
-        return latency;
+        return latencyProperty;
     }
 
-    public final String getDist(){ return dist.get();  }
+    public final String getDist(){ return distProperty.get();  }
     public final void setDist(String value) {
-        dist.set(value);
+        distProperty.set(value);
     }
     public StringProperty distProperty() {
-        return dist;
+        return distProperty;
     }
 
-    public final String getLevel(){ return level.get();  }
+    public final String getLevel(){ return levelProperty.get();  }
     public final void setLevel(String value) {
-        level.set(value);
+        levelProperty.set(value);
     }
     public StringProperty levelProperty() {
-        return level;
+        return levelProperty;
     }
 
-    public final String getInrate(){ return inrate.get();  }
+    public final String getInrate(){ return inrateProperty.get();  }
     public final void setInrate(String value) {
-        inrate.set(value);
+        inrateProperty.set(value);
     }
     public StringProperty inrateProperty() {
-        return inrate;
+        return inrateProperty;
     }
 
-    public final String getOutrate(){ return outrate.get();  }
+    public final String getOutrate(){ return outrateProperty.get();  }
     public final void setOutrate(String value) {
-        outrate.set(value);
+        outrateProperty.set(value);
     }
     public StringProperty outrateProperty() {
-        return outrate;
+        return outrateProperty;
     }
 
-    public final String getBlock(){ return block.get();  }
+    public final String getBlock(){ return blockProperty.get();  }
     public final void setBlock(String value) {
-        block.set(value);
+        blockProperty.set(value);
     }
     public StringProperty blockProperty() {
-        return block;
+        return blockProperty;
     }
 
 

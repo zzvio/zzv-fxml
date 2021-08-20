@@ -20,6 +20,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -202,7 +203,9 @@ public class SemuxP2pHandler extends SimpleChannelInboundHandler<Message> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        logger.finest(String.format("Exception in P2P handler, remoteIp = %s", channel.getRemoteIp(), cause));
+        if (logger.isLoggable(Level.FINEST)) {
+            logger.finest(String.format("Exception in P2P handler, remoteIp = %s", channel.getRemoteIp(), cause));
+        }
 
         // close connection on exception
         ctx.close();
@@ -210,7 +213,9 @@ public class SemuxP2pHandler extends SimpleChannelInboundHandler<Message> {
 
     @Override
     public void channelRead0(final ChannelHandlerContext ctx, Message msg) throws InterruptedException {
-        logger.fine(String.format("Received message: %s", msg));
+        if (logger.isLoggable(Level.FINEST)) {
+            logger.fine(String.format("Received message: %s", msg));
+        }
 
         switch (msg.getCode()) {
         /* p2p */

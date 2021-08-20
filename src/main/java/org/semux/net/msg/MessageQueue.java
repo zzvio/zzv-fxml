@@ -15,6 +15,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.semux.config.Config;
@@ -149,7 +150,9 @@ public class MessageQueue {
         for (int i = 0; i < n; i++) {
             Message msg = !prioritized.isEmpty() ? prioritized.poll() : queue.poll();
 
-            logger.fine(String.format("Wiring message: %s", msg));
+            if (logger.isLoggable(Level.FINE)) {
+                logger.fine(String.format("Wiring message: %s", msg));
+            }
             ctx.write(msg).addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
         }
 

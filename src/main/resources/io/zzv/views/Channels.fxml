@@ -8,32 +8,77 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+   </padding>
    <top>
-      <GridPane prefHeight="600.0" prefWidth="802.0" BorderPane.alignment="CENTER">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="560.0" minHeight="10.0" prefHeight="551.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <GridPane  hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="channelsTableView" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
+            <TableView fx:id="channelsTableView" GridPane.rowIndex="1" >
                <columns>
-                  <TableColumn fx:id="numColumn" prefWidth="40.0" text="num" />
-                  <TableColumn fx:id="hostColumn" minWidth="0.0" prefWidth="133.0" text="host" />
-                  <TableColumn fx:id="activeColumn" minWidth="0.0" prefWidth="57.0" text="active" />
-                  <TableColumn fx:id="outboundColumn" minWidth="0.0" prefWidth="12.0" text="outbound" />
-                  <TableColumn fx:id="latencyColumn" minWidth="0.0" prefWidth="0.0" text="latency" />
-                  <TableColumn fx:id="distColumn" minWidth="0.0" prefWidth="0.0" text="dist" />
-                  <TableColumn fx:id="levelColumn" minWidth="0.0" prefWidth="0.0" text="level" />
-                  <TableColumn fx:id="inrateColumn" minWidth="0.0" prefWidth="23.0" text="inrate" />
-                  <TableColumn fx:id="outrateColumn" minWidth="0.0" prefWidth="0.0" text="outrate" />
-                  <TableColumn fx:id="blockColumn" prefWidth="84.0" text="block" />
+                  <TableColumn fx:id="num" prefWidth="75.0" text="num" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="num" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="host" prefWidth="75.0" text="host" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="host" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="active" prefWidth="75.0" text="active" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="active" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="outbound" prefWidth="75.0" text="outbound" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="outbound" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="latency" prefWidth="75.0" text="latency" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="latency" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="dist" prefWidth="75.0" text="dist" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="dist" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="level" prefWidth="75.0" text="level" >
+               <cellValueFactory>
+                  <PropertyValueFactory property="level" />
+               </cellValueFactory>
+            </TableColumn>
+                  <TableColumn fx:id="inrate" prefWidth="75.0" text="inrate" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="inrate" />
+                  </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="outrate" prefWidth="75.0" text="outrate" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="outrate" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="block" prefWidth="75.0" text="block" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="block" />
+                  </cellValueFactory>
+               </TableColumn>
                </columns>
             </TableView>
          </children>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints percentHeight="100.0" />
+         </rowConstraints>
       </GridPane>
    </top>
 </View>
