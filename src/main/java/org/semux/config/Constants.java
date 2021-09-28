@@ -18,7 +18,7 @@ public class Constants {
      * Default data directory.
      */
     public static final String DEFAULT_ROOT_DIR = ".";
-    public static final String WALLET_FILE = "wallet_0.data";
+    public static final String WALLET_FILE = "wallet.data";
     public static final String CONFIG_FILE = "semux.properties";
 
     /**

@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.geometry.Insets?>
-<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
+<View fx:id="pluginsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Plugins.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.PluginsPresenter">
    <padding>
       <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
    </padding>
    <top>
       <GridPane  hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="channelsTableView" GridPane.rowIndex="1" >
+            <TableView fx:id="pluginsTableView" GridPane.rowIndex="1" >
                <columns>
                   <TableColumn fx:id="numColumn" prefWidth="75.0" text="num" />
                   <TableColumn fx:id="hostColumn" prefWidth="75.0" text="host" />

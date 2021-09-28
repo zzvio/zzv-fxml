@@ -583,41 +583,6 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"io.zzv.model.ChannelJo",
-  "methods":[
-    {"name":"activeProperty","parameterTypes":[] }, 
-    {"name":"blockProperty","parameterTypes":[] }, 
-    {"name":"distProperty","parameterTypes":[] }, 
-    {"name":"getActive","parameterTypes":[] }, 
-    {"name":"getBlock","parameterTypes":[] }, 
-    {"name":"getDist","parameterTypes":[] }, 
-    {"name":"getHost","parameterTypes":[] }, 
-    {"name":"getInrate","parameterTypes":[] }, 
-    {"name":"getLatency","parameterTypes":[] }, 
-    {"name":"getLevel","parameterTypes":[] }, 
-    {"name":"getNum","parameterTypes":[] }, 
-    {"name":"getOutbound","parameterTypes":[] }, 
-    {"name":"getOutrate","parameterTypes":[] }, 
-    {"name":"hostProperty","parameterTypes":[] }, 
-    {"name":"inrateProperty","parameterTypes":[] }, 
-    {"name":"latencyProperty","parameterTypes":[] }, 
-    {"name":"levelProperty","parameterTypes":[] }, 
-    {"name":"numProperty","parameterTypes":[] }, 
-    {"name":"outboundProperty","parameterTypes":[] }, 
-    {"name":"outrateProperty","parameterTypes":[] }, 
-    {"name":"setActive","parameterTypes":["java.lang.String"] }, 
-    {"name":"setBlock","parameterTypes":["java.lang.String"] }, 
-    {"name":"setDist","parameterTypes":["java.lang.String"] }, 
-    {"name":"setHost","parameterTypes":["java.lang.String"] }, 
-    {"name":"setInrate","parameterTypes":["java.lang.String"] }, 
-    {"name":"setLatency","parameterTypes":["java.lang.String"] }, 
-    {"name":"setLevel","parameterTypes":["java.lang.String"] }, 
-    {"name":"setNum","parameterTypes":["java.lang.String"] }, 
-    {"name":"setOutbound","parameterTypes":["java.lang.String"] }, 
-    {"name":"setOutrate","parameterTypes":["java.lang.String"] }
-  ]
-},
-{
   "name":"io.zzv.views.ChannelsPresenter",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,
@@ -957,11 +922,6 @@
   "allDeclaredMethods":true,
   "allPublicConstructors":true,
   "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"javafx.scene.control.cell.PropertyValueFactory",
-  "allPublicMethods":true,
-  "allPublicConstructors":true
 },
 {
   "name":"javafx.scene.effect.Effect"

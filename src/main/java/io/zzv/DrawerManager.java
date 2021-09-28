@@ -35,9 +35,10 @@ public class DrawerManager {
     final Item transactionsItem = new ViewItem("Transactions", MaterialDesignIcon.DASHBOARD.graphic(), TRANSACTIONS_VIEW);
     final Item delegatesItem = new ViewItem("Delegates", MaterialDesignIcon.DASHBOARD.graphic(), DELEGATES_VIEW);
     final Item channelsItem = new ViewItem("Channels", MaterialDesignIcon.DASHBOARD.graphic(), CHANNELS_VIEW);
+    final Item pluginsItem = new ViewItem("Plugins", MaterialDesignIcon.DASHBOARD.graphic(), PLUGINS_VIEW);
     final Item debugItem = new ViewItem("Debug", MaterialDesignIcon.DASHBOARD.graphic(), DEBUG_VIEW);
 
-    drawer.getItems().addAll(homeItem, receiveItem, sendItem, transactionsItem, delegatesItem, channelsItem, debugItem);
+    drawer.getItems().addAll(homeItem, receiveItem, sendItem, transactionsItem, delegatesItem, channelsItem, pluginsItem, debugItem);
 
     if (Platform.isDesktop()) {
       final Item quitItem = new Item("Quit", MaterialDesignIcon.EXIT_TO_APP.graphic());

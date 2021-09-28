@@ -1,11 +1,11 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.semux</groupId>
-    <artifactId>semux-core</artifactId>
+    <groupId>io.zzv</groupId>
+    <artifactId>zzv-core</artifactId>
     <version>2.3.0</version>
     <packaging>jar</packaging>
-    <description>Semux is an experimental high-performance blockchain platform that powers decentralized application.
+    <description>ZZV is fork of Semux, and is an experimental high-performance blockchain platform that powers decentralized application.
     </description>
 
     <properties>
@@ -1059,7 +1059,7 @@
                         <list>lifecycle</list>
                         <list>statusbar</list>
                         <list>storage</list>
-<!--                        <list>web</list>-->
+                        <list>web</list>
                     </attachList>
                     <nativeImageArgs>
                         <nativeImageArg>-g</nativeImageArg>

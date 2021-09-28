@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Gluon's GraalVM Installation
-        uses: gluonhq/setup-graalvm@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: zzvio/setup-graalvm@5.3
+        with:
+          graalvm: '21.3.0-dev-20210729_2115'
+          java: java11
 
       - name: Install libraries
         run: sudo apt update; sudo apt install -y maven libasound2-dev libavcodec-dev libavformat-dev libavutil-dev libgl-dev libgtk-3-dev libpango1.0-dev libxtst-dev
@@ -25,10 +25,7 @@ jobs:
       #   with:
       #     fileName: 'my.keystore'
       #     encodedString: ${{ secrets.GLUON_ANDROID_KEYSTORE_BASE64 }}
-
-      - name: Copy pom
-        run: cp src/android/pom.xml .
-
+          
       - name: Gluon Build
         run: mvn -Pandroid gluonfx:build gluonfx:package
         env:

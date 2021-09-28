@@ -19,10 +19,10 @@
         </Async>
     </Appenders>
     <Loggers>
-        <Logger name="org.semux.net.msg"  level="FINEST" />
+        <Logger name="org.semux.net.msg"  level="FINE" />
         <Logger name="org.semux.api" level="INFO" />
         <Logger name="org.semux.core" level="INFO" />
-        <Logger name="org.semux.consensus" level="FINEST" />
+        <Logger name="org.semux.consensus" level="INFO" />
         <Logger name="org.semux.db" level="INFO" />
         <Logger name="org.semux.net" level="ALL" />
         <Logger name="org.semux.vm" level="INFO" />

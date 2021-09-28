@@ -1,4 +1,3 @@
-#Channel View displays values and compiles on Linux
 #Latest version test commented WebView graalvm-ce-java11-21.3.0-dev-20210723_1948
 #Latest version tests WebView with search
 #Latest version adds --language:js and start/stop Kernet

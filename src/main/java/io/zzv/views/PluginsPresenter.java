@@ -19,21 +19,21 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class ChannelsPresenter {
+public class PluginsPresenter {
 
-  @FXML private View channelsView;
-  @FXML private TableView<PluginJo> channelsTableView;
-  @FXML private TableColumn channelInfo;
+  @FXML private View pluginsView;
+  @FXML private TableView<PluginJo> pluginsTableView;
+  @FXML private TableColumn pluginInfo;
   private ObservableList<PluginJo> itens = FXCollections.observableArrayList();
 
   public void initialize() {
-    channelsView.setShowTransitionFactory(BounceInRightTransition::new);
+    pluginsView.setShowTransitionFactory(BounceInRightTransition::new);
 
     FloatingActionButton fab =
         new FloatingActionButton(
             MaterialDesignIcon.INFO.text,
             e -> {
-              channelsTableView.getItems().clear();
+              pluginsTableView.getItems().clear();
               final List<Channel> channelList = Kernel.getInstance().getChannelManager().getActiveChannels();
               itens.clear();
               int i = 0;
@@ -42,12 +42,12 @@ public class ChannelsPresenter {
                   itens.add(jo);
                 System.out.println("#" + (++i) + " - "  + channel.toString() + " #block# " + channel.getRemotePeer().getLatestBlockNumber());
               }
-              channelsTableView.setItems(itens);
+              pluginsTableView.setItems(itens);
               System.out.println("Set Channels size - " + itens.size());
             });
-    fab.showOn(channelsView);
+    fab.showOn(pluginsView);
 
-    channelsView
+    pluginsView
         .showingProperty()
         .addListener(
             (obs, oldValue, newValue) -> {
@@ -56,17 +56,17 @@ public class ChannelsPresenter {
                 appBar.setNavIcon(
                     MaterialDesignIcon.MENU.button(
                         e -> MobileApplication.getInstance().getDrawer().open()));
-                appBar.setTitleText("Channels");
+                appBar.setTitleText("Plugins");
                 appBar
                     .getActionItems()
                     .add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
               }
             });
 
-      channelsTableView.prefHeightProperty().bind(channelsView.heightProperty());
-      channelsTableView.prefWidthProperty().bind(channelsView.widthProperty());
+      pluginsTableView.prefHeightProperty().bind(pluginsView.heightProperty());
+      pluginsTableView.prefWidthProperty().bind(pluginsView.widthProperty());
 
-      channelsTableView.setRowFactory( tv -> {
+      pluginsTableView.setRowFactory(tv -> {
           TableRow<PluginJo> row = new TableRow<>(){
           @Override
           public void updateItem(PluginJo item, boolean empty) {
@@ -97,14 +97,5 @@ public class ChannelsPresenter {
           return row ;
       });
 
-//      channelsTableView.setOnMousePressed(new EventHandler<MouseEvent>() {
-//          @Override
-//          public void handle(MouseEvent event) {
-//                  if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-//                      ChannelJo jo = channelsTableView.getSelectionModel().getSelectedItem();
-//                      System.out.println(jo);
-//                  }
-//          }
-//      });
   }
 }
