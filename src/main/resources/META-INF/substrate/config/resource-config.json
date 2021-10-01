@@ -26,6 +26,7 @@
     {"pattern":"\\Qio/zzv/views/Debug.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Delegates.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Home.fxml\\E"}, 
+    {"pattern":"\\Qio/zzv/views/Plugins.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Receive.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Send.fxml\\E"}, 
     {"pattern":"\\Qio/zzv/views/Transactions.fxml\\E"}, 

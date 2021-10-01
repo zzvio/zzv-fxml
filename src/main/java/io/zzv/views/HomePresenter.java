@@ -3,6 +3,7 @@ package io.zzv.views;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.zzv.DrawerManager;
 import org.graalvm.polyglot.*;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
@@ -36,6 +37,7 @@ public class HomePresenter {
                     MaterialDesignIcon.MENU.button(
                         e -> MobileApplication.getInstance().getDrawer().open()));
                 appBar.setTitleText("Home");
+                DrawerManager.homeDrawer();
                 appBar
                     .getActionItems()
                     .add(MaterialDesignIcon.SEARCH.button(e -> System.out.println("Search")));

@@ -20,6 +20,8 @@ public class MainGui extends MobileApplication {
     public static final String DELEGATES_VIEW = "Delegates";
     public static final String CHANNELS_VIEW = "Channels";
     public static final String PLUGINS_VIEW = "Plugins";
+    public static final String LIMITORDERBOOK_VIEW = "LimitOrderBook";
+    public static final String TELEGRAM_VIEW = "Telegram";
     public static final String DEBUG_VIEW = "Debug";
 
     private static SemuxCli chain = null;
@@ -67,8 +69,11 @@ public class MainGui extends MobileApplication {
         addViewFactory(DELEGATES_VIEW, () -> new DelegatesView().getView());
         addViewFactory(CHANNELS_VIEW, () -> new ChannelsView().getView());
         addViewFactory(PLUGINS_VIEW, () -> new PluginsView().getView());
+        addViewFactory(LIMITORDERBOOK_VIEW, () -> new LimitOrderBookView().getView());
+        addViewFactory(TELEGRAM_VIEW, () -> new TelegramView().getView());
         addViewFactory(DEBUG_VIEW, () -> new DebugView().getView());
-        DrawerManager.buildDrawer(this);
+        DrawerManager.initDrawer(this);
+//        DrawerManager.homeDrawer();
     }
 
     @Override

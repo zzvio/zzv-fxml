@@ -607,6 +607,12 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"io.zzv.views.PluginsPresenter",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"io.zzv.views.ReceivePresenter",
   "allDeclaredFields":true,
   "allDeclaredMethods":true,

@@ -13,7 +13,7 @@ import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
-import io.zzv.model.PluginJo;
+import io.zzv.model.ChannelJo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,9 +22,9 @@ import javafx.scene.control.*;
 public class ChannelsPresenter {
 
   @FXML private View channelsView;
-  @FXML private TableView<PluginJo> channelsTableView;
+  @FXML private TableView<ChannelJo> channelsTableView;
   @FXML private TableColumn channelInfo;
-  private ObservableList<PluginJo> itens = FXCollections.observableArrayList();
+  private ObservableList<ChannelJo> itens = FXCollections.observableArrayList();
 
   public void initialize() {
     channelsView.setShowTransitionFactory(BounceInRightTransition::new);
@@ -38,7 +38,7 @@ public class ChannelsPresenter {
               itens.clear();
               int i = 0;
               for (final Channel channel :channelList ) {
-                final PluginJo jo = new PluginJo(channel);
+                final ChannelJo jo = new ChannelJo(channel);
                   itens.add(jo);
                 System.out.println("#" + (++i) + " - "  + channel.toString() + " #block# " + channel.getRemotePeer().getLatestBlockNumber());
               }
@@ -67,9 +67,9 @@ public class ChannelsPresenter {
       channelsTableView.prefWidthProperty().bind(channelsView.widthProperty());
 
       channelsTableView.setRowFactory( tv -> {
-          TableRow<PluginJo> row = new TableRow<>(){
+          TableRow<ChannelJo> row = new TableRow<>(){
           @Override
-          public void updateItem(PluginJo item, boolean empty) {
+          public void updateItem(ChannelJo item, boolean empty) {
               super.updateItem(item, empty) ;
               if (item == null) {
                   setStyle("");
@@ -82,7 +82,7 @@ public class ChannelsPresenter {
           };
 
           row.setOnMouseClicked(event -> {
-              PluginJo data = row.getItem();
+              ChannelJo data = row.getItem();
               Dialog dialog = new Dialog();
               dialog.setTitle(new Label("Channel - " + data.getHost() +  " #block - " + data.getBlock()));
               dialog.setContent(new Label(data.toString()));

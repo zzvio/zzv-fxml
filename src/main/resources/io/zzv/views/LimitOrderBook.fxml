@@ -9,16 +9,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.geometry.Insets?>
-<View fx:id="pluginsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Plugins.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.PluginsPresenter">
+<View fx:id="pluginsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Plugins.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.LimitOrderBookPresenter">
    <padding>
       <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
    </padding>
    <top>
       <GridPane  hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="pluginsTableView" GridPane.rowIndex="1" >
+            <TableView fx:id="ordersTableView" GridPane.rowIndex="1" >
                <columns>
-                  <TableColumn fx:id="pluginName" prefWidth="300.0" text="Name" />
+                  <TableColumn fx:id="buy" prefWidth="170.0" text="Buy" />
+                  <TableColumn fx:id="sell" prefWidth="170.0" text="Sell" />
                </columns>
             </TableView>
          </children>

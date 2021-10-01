@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.gluonhq.charm.glisten.mvc.View;
 
+import io.zzv.DrawerManager;
 import javafx.fxml.FXMLLoader;
 
 public class HomeView {

@@ -1,10 +1,5 @@
 package io.zzv.views;
 
-import java.util.List;
-
-import org.semux.Kernel;
-import org.semux.net.Channel;
-
 import com.gluonhq.charm.glisten.animation.BounceInRightTransition;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
@@ -13,6 +8,7 @@ import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
+import io.zzv.DrawerManager;
 import io.zzv.model.PluginJo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,26 +20,24 @@ public class PluginsPresenter {
   @FXML private View pluginsView;
   @FXML private TableView<PluginJo> pluginsTableView;
   @FXML private TableColumn pluginInfo;
-  private ObservableList<PluginJo> itens = FXCollections.observableArrayList();
+  private ObservableList<PluginJo> items = FXCollections.observableArrayList();
 
   public void initialize() {
     pluginsView.setShowTransitionFactory(BounceInRightTransition::new);
+
 
     FloatingActionButton fab =
         new FloatingActionButton(
             MaterialDesignIcon.INFO.text,
             e -> {
-              pluginsTableView.getItems().clear();
-              final List<Channel> channelList = Kernel.getInstance().getChannelManager().getActiveChannels();
-              itens.clear();
-              int i = 0;
-              for (final Channel channel :channelList ) {
-                final PluginJo jo = new PluginJo(channel);
-                  itens.add(jo);
-                System.out.println("#" + (++i) + " - "  + channel.toString() + " #block# " + channel.getRemotePeer().getLatestBlockNumber());
+              final String[] pluginList = {"Limit Order Book", "Telegram", "BTC", "ETH", "IPFS"};
+              for ( String pluginName: pluginList) {
+                final PluginJo jo = new PluginJo(pluginName);
+                  items.add(jo);
+                System.out.println("Adding Plugin" + pluginName  );
               }
-              pluginsTableView.setItems(itens);
-              System.out.println("Set Channels size - " + itens.size());
+              pluginsTableView.setItems(items);
+              System.out.println("Set Plugins size - " + items.size());
             });
     fab.showOn(pluginsView);
 
@@ -57,6 +51,7 @@ public class PluginsPresenter {
                     MaterialDesignIcon.MENU.button(
                         e -> MobileApplication.getInstance().getDrawer().open()));
                 appBar.setTitleText("Plugins");
+                DrawerManager.pluginDrawer();
                 appBar
                     .getActionItems()
                     .add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
@@ -73,10 +68,8 @@ public class PluginsPresenter {
               super.updateItem(item, empty) ;
               if (item == null) {
                   setStyle("");
-              } else if (item.getOutbound().equals("Input")) {
-                  setStyle("-fx-background-color: #cdf8f5;");
               } else {
-                  setStyle("-fx-background-color: #f4f5ce;");
+                  setStyle("-fx-background-color: #cdf8f5;");
               }
           }
           };
@@ -84,8 +77,8 @@ public class PluginsPresenter {
           row.setOnMouseClicked(event -> {
               PluginJo data = row.getItem();
               Dialog dialog = new Dialog();
-              dialog.setTitle(new Label("Channel - " + data.getHost() +  " #block - " + data.getBlock()));
-              dialog.setContent(new Label(data.toString()));
+              dialog.setTitle(new Label("Plugin - " +  data.getName() ));
+              dialog.setContent(new Label(data.getName()));
               Button okButton = new Button("OK");
               okButton.setOnAction(e -> {
                   dialog.hide();
