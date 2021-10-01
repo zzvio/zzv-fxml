@@ -13,6 +13,7 @@ import com.gluonhq.charm.glisten.control.NavigationDrawer.Item;
 import com.gluonhq.charm.glisten.control.NavigationDrawer.ViewItem;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
+import io.zzv.views.BtcView;
 import javafx.scene.image.Image;
 
 public class DrawerManager {
@@ -27,8 +28,10 @@ public class DrawerManager {
   public static void pluginDrawer(){
     final Item lobItem = new ViewItem("Limit Order Book", MaterialDesignIcon.DASHBOARD.graphic(), LIMITORDERBOOK_VIEW);
     final Item telegramItem = new ViewItem("Telegram", MaterialDesignIcon.DASHBOARD.graphic(), TELEGRAM_VIEW);
+    final Item btcItem = new ViewItem("BTC", MaterialDesignIcon.DASHBOARD.graphic(), BTC_VIEW);
+    final Item ethItem = new ViewItem("ETH", MaterialDesignIcon.DASHBOARD.graphic(), ETH_VIEW);
     drawer.getItems().clear();
-    drawer.getItems().addAll(homeItem, lobItem, telegramItem, debugItem);
+    drawer.getItems().addAll(homeItem, lobItem, telegramItem, btcItem, ethItem, debugItem);
     addQuitItem();
   }
 

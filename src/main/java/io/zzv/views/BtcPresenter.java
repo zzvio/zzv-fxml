@@ -16,20 +16,20 @@ public class BtcPresenter {
         btcView.setShowTransitionFactory(BounceInRightTransition::new);
 
         btcView.showingProperty()
-                .addListener(
-                        (obs, oldValue, newValue) -> {
-                            if (newValue) {
-                                AppBar appBar = MobileApplication.getInstance().getAppBar();
-                                appBar.setNavIcon(
-                                        MaterialDesignIcon.MENU.button(
-                                                e -> MobileApplication.getInstance().getDrawer().open()));
-                                appBar.setTitleText("Telegram");
-                                DrawerManager.pluginDrawer();
-                                appBar
-                                        .getActionItems()
-                                        .add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
-                            }
-                        });
+        .addListener(
+        (obs, oldValue, newValue) -> {
+            if (newValue) {
+                AppBar appBar = MobileApplication.getInstance().getAppBar();
+                appBar.setNavIcon(
+                    MaterialDesignIcon.MENU.button(
+                            e -> MobileApplication.getInstance().getDrawer().open()));
+                appBar.setTitleText("Bitcoin");
+                DrawerManager.pluginDrawer();
+                appBar
+                .getActionItems()
+                .add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
+            }
+        });
 
         btcView.prefHeightProperty().bind(btcView.heightProperty());
         btcView.prefWidthProperty().bind(btcView.widthProperty());
