@@ -14,10 +14,10 @@
    <center>
       <Pane prefHeight="605.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="129.0" layoutY="202.0" mnemonicParsing="false" text="Start" />
             <Label layoutX="86.0" layoutY="154.0" prefHeight="18.0" prefWidth="140.0" text="Start Bitcoin node" />
-            <Button layoutX="66.0" layoutY="202.0" mnemonicParsing="false" text="Load" />
-            <Button layoutX="195.0" layoutY="202.0" mnemonicParsing="false" text="Stop" />
+            <Button fx:id="start" layoutX="129.0" layoutY="202.0" mnemonicParsing="false" text="Start" onAction="#Start"/>
+            <Button fx:id="load" layoutX="66.0" layoutY="202.0" mnemonicParsing="false" text="Load" onAction="#Load"/>
+            <Button fx:id="stop" layoutX="195.0" layoutY="202.0" mnemonicParsing="false" text="Stop"  onAction="#Stop"/>
          </children>
       </Pane>
    </center>
