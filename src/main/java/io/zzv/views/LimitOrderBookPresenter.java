@@ -3,90 +3,66 @@ package io.zzv.views;
 import com.gluonhq.charm.glisten.animation.BounceInRightTransition;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.Dialog;
-import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import io.zzv.DrawerManager;
-import io.zzv.model.PluginJo;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import io.zzv.plugins.LimitOrderBook.Loader;
+import io.zzv.plugins.LimitOrderBook.Order;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class LimitOrderBookPresenter {
     @FXML
-    private View pluginsView;
-    @FXML private TableView<PluginJo> ordersTableView;
-    @FXML private TableColumn pluginInfo;
-    private ObservableList<PluginJo> items = FXCollections.observableArrayList();
-
+    private View lobView;
+    @FXML
+    private TextArea response;
+    Loader loader;
+    private static LimitOrderBookPresenter limitOrderBookPresenter;
     public void initialize() {
-        pluginsView.setShowTransitionFactory(BounceInRightTransition::new);
+        lobView.setShowTransitionFactory(BounceInRightTransition::new);
 
-
-        FloatingActionButton fab =
-                new FloatingActionButton(
-                        MaterialDesignIcon.INFO.text,
-                        e -> {
-//                            final String[] pluginList = {"Limit Order Book", "Telegram", "BTC", "ETH", "IPFS"};
-//                            for ( String pluginName: pluginList) {
-//                                final PluginJo jo = new PluginJo(pluginName);
-//                                items.add(jo);
-//                                System.out.println("Adding Plugin" + pluginName  );
-//                            }
-                            // Get orders here
-                            ordersTableView.setItems(items);
-                            System.out.println("Set Plugins size - " + items.size());
-                        });
-        fab.showOn(pluginsView);
-
-        pluginsView
-                .showingProperty()
-                .addListener(
-                        (obs, oldValue, newValue) -> {
-                            if (newValue) {
-                                AppBar appBar = MobileApplication.getInstance().getAppBar();
-                                appBar.setNavIcon(MaterialDesignIcon.MENU.button(
-                                                e -> MobileApplication.getInstance().getDrawer().open()));
-                                appBar.setTitleText("Limit Order Book");
-                                DrawerManager.pluginDrawer();
-                                appBar.getActionItems().add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
-                            }
-                        });
-
-        ordersTableView.prefHeightProperty().bind(pluginsView.heightProperty());
-        ordersTableView.prefWidthProperty().bind(pluginsView.widthProperty());
-
-        ordersTableView.setRowFactory(tv -> {
-            TableRow<PluginJo> row = new TableRow<>(){
-                @Override
-                public void updateItem(PluginJo item, boolean empty) {
-                    super.updateItem(item, empty) ;
-                    if (item == null) {
-                        setStyle("");
-                    } else {
-                        setStyle("-fx-background-color: #cdf8f5;");
-                    }
-                }
-            };
-
-//            row.setOnMouseClicked(event -> {
-//                PluginJo data = row.getItem();
-//                Dialog dialog = new Dialog();
-//                dialog.setTitle(new Label("Plugin - " +  data.getName() ));
-//                dialog.setContent(new Label(data.getName()));
-//                Button okButton = new Button("OK");
-//                okButton.setOnAction(e -> {
-//                    dialog.hide();
-//                });
-//                dialog.getButtons().add(okButton);
-//                dialog.showAndWait();
-//                System.out.println(data);
-//            });
-            return row ;
+        lobView
+        .showingProperty()
+        .addListener(
+        (obs, oldValue, newValue) -> {
+            if (newValue) {
+                AppBar appBar = MobileApplication.getInstance().getAppBar();
+                appBar.setNavIcon(MaterialDesignIcon.MENU.button(
+                                e -> MobileApplication.getInstance().getDrawer().open()));
+                appBar.setTitleText("Limit Order Book");
+                DrawerManager.pluginDrawer();
+                appBar.getActionItems().add(MaterialDesignIcon.FAVORITE.button(e -> System.out.println("Favorite")));
+            }
         });
+        loader = new Loader();
+        Thread thread = new Thread(loader);
+        thread.start();
+        limitOrderBookPresenter = this;
+    }
 
+    public void NewOrder(){
+        int clientID = 1111; // Mock clientOrderID
+
+        byte bookType = (byte) 2; // Kilo book
+        int tokenID = 2;
+        int benchmarkID = 1;
+        Order order = new Order(tokenID, benchmarkID, clientID, (byte) 140, (byte) 2, bookType, (byte) 1, 1, 0, 103, 0);
+        Loader.run(order);;
+    }
+
+    public void CancelOrder(){
+        int clientID = 1111; // Mock clientOrderID
+        int orderID = Loader.orderIDMap.get(clientID);
+
+        byte bookType = (byte) 2; // Kilo book
+        int tokenID = 2;
+        int benchmarkID = 1;
+        Order order = new Order(tokenID, benchmarkID, orderID, (byte) 140, (byte) 3, bookType, (byte) 1, 1, 0, 103, 0);
+        Loader.run(order);
+    }
+
+    public static void Response(String msg){
+        limitOrderBookPresenter.response.setText(msg);
     }
 
 }

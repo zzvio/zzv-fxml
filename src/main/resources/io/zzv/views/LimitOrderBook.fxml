@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
 <?import javafx.geometry.Insets?>
-<View fx:id="pluginsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Plugins.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.LimitOrderBookPresenter">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<View fx:id="lobView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Plugins.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.LimitOrderBookPresenter">
    <padding>
-      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
    </padding>
-   <top>
-      <GridPane  hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+   <center>
+      <Pane prefHeight="605.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="ordersTableView" GridPane.rowIndex="1" >
-               <columns>
-                  <TableColumn fx:id="buy" prefWidth="170.0" text="Buy" />
-                  <TableColumn fx:id="sell" prefWidth="170.0" text="Sell" />
-               </columns>
-            </TableView>
+            <Label layoutX="115.0" layoutY="19.0" prefHeight="18.0" prefWidth="105.0" text="Limit Order Book" />
+            <Button layoutX="24.0" layoutY="49.0" mnemonicParsing="false" onAction="#NewOrder" text="New Order" />
+            <TextArea fx:id="response" layoutX="13.0" layoutY="208.0" prefHeight="328.0" prefWidth="309.0" promptText="Response" wrapText="true" />
+            <Button layoutX="115.0" layoutY="49.0" mnemonicParsing="false" onAction="#CancelOrder" text="Cancel Order" />
+            <Button layoutX="220.0" layoutY="49.0" mnemonicParsing="false" onAction="#NewOrder" text="Replace Order" />
+            <Button layoutX="24.0" layoutY="97.0" mnemonicParsing="false" onAction="#NewOrder" text="Add To Market" />
+            <Button layoutX="147.0" layoutY="97.0" mnemonicParsing="false" onAction="#NewOrder" text="Remove From Market" />
+            <Button layoutX="24.0" layoutY="147.0" mnemonicParsing="false" onAction="#NewOrder" text="Cancel All Orders" />
          </children>
-         <columnConstraints>
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints percentHeight="100.0" />
-         </rowConstraints>
-      </GridPane>
-   </top>
+      </Pane>
+   </center>
 </View>

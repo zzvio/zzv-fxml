@@ -10,8 +10,6 @@ import io.zzv.plugins.BtcLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-import java.awt.*;
-
 public class BtcPresenter {
     @FXML
     private View btcView;
