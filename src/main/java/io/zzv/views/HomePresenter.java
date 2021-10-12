@@ -3,7 +3,6 @@ package io.zzv.views;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.zzv.DrawerManager;
 import org.graalvm.polyglot.*;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
@@ -11,6 +10,7 @@ import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
+import io.zzv.DrawerManager;
 import io.zzv.debug.KernelFunc;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

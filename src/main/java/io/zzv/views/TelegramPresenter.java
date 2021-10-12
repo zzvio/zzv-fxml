@@ -7,6 +7,7 @@ import com.gluonhq.charm.glisten.control.Dialog;
 import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
+
 import io.zzv.DrawerManager;
 import io.zzv.model.PluginJo;
 import javafx.collections.FXCollections;

@@ -1,9 +1,10 @@
 package io.zzv.views;
 
-import com.gluonhq.charm.glisten.mvc.View;
-import javafx.fxml.FXMLLoader;
-
 import java.io.IOException;
+
+import com.gluonhq.charm.glisten.mvc.View;
+
+import javafx.fxml.FXMLLoader;
 
 public class LimitOrderBookView {
     public View getView() {

@@ -21,15 +21,24 @@
                <columns>
                   <TableColumn fx:id="numColumn" prefWidth="75.0" text="num"><cellValueFactory><PropertyValueFactory property="num" />
                   </cellValueFactory></TableColumn>
-                  <TableColumn fx:id="hostColumn" prefWidth="75.0" text="host" ></TableColumn>
-                  <TableColumn fx:id="activeColumn" prefWidth="75.0" text="active" ></TableColumn>
-                  <TableColumn fx:id="outboundColumn" prefWidth="75.0" text="outbound" ></TableColumn>
-                  <TableColumn fx:id="latencyColumn" prefWidth="75.0" text="latency" ></TableColumn>
-                  <TableColumn fx:id="distColumn" prefWidth="75.0" text="dist" ></TableColumn>
-                  <TableColumn fx:id="levelColumn" prefWidth="75.0" text="level" ></TableColumn>
-                  <TableColumn fx:id="inrateColumn" prefWidth="75.0" text="inrate" ></TableColumn>
-                  <TableColumn fx:id="outrateColumn" prefWidth="75.0" text="outrate" ></TableColumn>
-                  <TableColumn fx:id="blockColumn" prefWidth="75.0" text="block" ></TableColumn>
+                  <TableColumn fx:id="hostColumn" prefWidth="75.0" text="host" ><cellValueFactory><PropertyValueFactory property="host" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="activeColumn" prefWidth="75.0" text="active" ><cellValueFactory><PropertyValueFactory property="active" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="outboundColumn" prefWidth="75.0" text="outbound" ><cellValueFactory><PropertyValueFactory property="outbound" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="latencyColumn" prefWidth="75.0" text="latency" ><cellValueFactory><PropertyValueFactory property="latency" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="distColumn" prefWidth="75.0" text="dist" ><cellValueFactory><PropertyValueFactory property="dist" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="levelColumn" prefWidth="75.0" text="level" ><cellValueFactory><PropertyValueFactory property="level" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="inrateColumn" prefWidth="75.0" text="inrate" ><cellValueFactory><PropertyValueFactory property="inrate" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="outrateColumn" prefWidth="75.0" text="outrate" ><cellValueFactory><PropertyValueFactory property="outrate" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="blockColumn" prefWidth="75.0" text="block" ><cellValueFactory><PropertyValueFactory property="block" />
+                  </cellValueFactory></TableColumn>
                </columns>
             </TableView>
          </children>

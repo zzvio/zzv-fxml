@@ -5,6 +5,7 @@ import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
+
 import io.zzv.DrawerManager;
 import io.zzv.plugins.EthLoader;
 import javafx.fxml.FXML;

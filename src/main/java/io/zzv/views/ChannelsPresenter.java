@@ -1,5 +1,10 @@
 package io.zzv.views;
 
+import java.util.List;
+
+import org.semux.Kernel;
+import org.semux.net.Channel;
+
 import com.gluonhq.charm.glisten.animation.BounceInRightTransition;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
@@ -7,15 +12,12 @@ import com.gluonhq.charm.glisten.control.Dialog;
 import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
+
 import io.zzv.model.ChannelJo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.semux.Kernel;
-import org.semux.net.Channel;
-
-import java.util.List;
 
 public class ChannelsPresenter {
 
