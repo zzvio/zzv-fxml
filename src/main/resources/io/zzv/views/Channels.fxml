@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.geometry.Insets?>
-<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<View fx:id="channelsView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Channels.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.zzv.views.ChannelsPresenter">
    <padding>
       <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
    </padding>
@@ -18,16 +19,17 @@
          <children>
             <TableView fx:id="channelsTableView" GridPane.rowIndex="1" >
                <columns>
-                  <TableColumn fx:id="numColumn" prefWidth="75.0" text="num" />
-                  <TableColumn fx:id="hostColumn" prefWidth="75.0" text="host" />
-                  <TableColumn fx:id="activeColumn" prefWidth="75.0" text="active" />
-                  <TableColumn fx:id="outboundColumn" prefWidth="75.0" text="outbound" />
-                  <TableColumn fx:id="latencyColumn" prefWidth="75.0" text="latency" />
-                  <TableColumn fx:id="distColumn" prefWidth="75.0" text="dist" />
-                  <TableColumn fx:id="levelColumn" prefWidth="75.0" text="level" />
-                  <TableColumn fx:id="inrateColumn" prefWidth="75.0" text="inrate" />
-                  <TableColumn fx:id="outrateColumn" prefWidth="75.0" text="outrate" />
-                  <TableColumn fx:id="blockColumn" prefWidth="75.0" text="block" />
+                  <TableColumn fx:id="numColumn" prefWidth="75.0" text="num"><cellValueFactory><PropertyValueFactory property="num" />
+                  </cellValueFactory></TableColumn>
+                  <TableColumn fx:id="hostColumn" prefWidth="75.0" text="host" ></TableColumn>
+                  <TableColumn fx:id="activeColumn" prefWidth="75.0" text="active" ></TableColumn>
+                  <TableColumn fx:id="outboundColumn" prefWidth="75.0" text="outbound" ></TableColumn>
+                  <TableColumn fx:id="latencyColumn" prefWidth="75.0" text="latency" ></TableColumn>
+                  <TableColumn fx:id="distColumn" prefWidth="75.0" text="dist" ></TableColumn>
+                  <TableColumn fx:id="levelColumn" prefWidth="75.0" text="level" ></TableColumn>
+                  <TableColumn fx:id="inrateColumn" prefWidth="75.0" text="inrate" ></TableColumn>
+                  <TableColumn fx:id="outrateColumn" prefWidth="75.0" text="outrate" ></TableColumn>
+                  <TableColumn fx:id="blockColumn" prefWidth="75.0" text="block" ></TableColumn>
                </columns>
             </TableView>
          </children>

@@ -7,22 +7,22 @@ import javafx.beans.property.StringProperty;
 
 public class ChannelJo {
 
-    private final StringProperty numProperty;
-    private final StringProperty host;
-    private final StringProperty active;
-    private final StringProperty outbound;
-    private final StringProperty latency;
-    private final StringProperty dist;
-    private final StringProperty level;
-    private final StringProperty inrate;
-    private final StringProperty outrate;
-    private final StringProperty block;
+    private final SimpleStringProperty num;
+    private final SimpleStringProperty host;
+    private final SimpleStringProperty active;
+    private final SimpleStringProperty outbound;
+    private final SimpleStringProperty latency;
+    private final SimpleStringProperty dist;
+    private final SimpleStringProperty level;
+    private final SimpleStringProperty inrate;
+    private final SimpleStringProperty outrate;
+    private final SimpleStringProperty block;
 
     private Channel channel;
 
     public ChannelJo(Channel channel){
         this.channel= channel;
-        this.numProperty = new SimpleStringProperty(""+channel.getRemotePort());
+        this.num = new SimpleStringProperty(""+channel.getRemotePort());
         this.host = new SimpleStringProperty(channel.getRemoteIp());
         this.active = new SimpleStringProperty(""+ channel.isActive());
         this.outbound = new SimpleStringProperty(channel.isInbound()?"Input":"Output");
@@ -38,21 +38,21 @@ public class ChannelJo {
         return channel.toString();
     }
 
-    public final String getNumProperty(){
-        return numProperty.get();
+    public final String getNum(){
+        return num.get();
     }
-    public final void setNumProperty(String value) {
-        numProperty.set(value);
+    public final void setNum(String value) {
+        num.set(value);
     }
-    public StringProperty numPropertyProperty() {
-        return numProperty;
+    public SimpleStringProperty numProperty() {
+        return num;
     }
 
     public final String getHost(){ return host.get();  }
     public final void setHost(String value) {
         host.set(value);
     }
-    public StringProperty hostProperty() {
+    public SimpleStringProperty hostProperty() {
         return host;
     }
 
@@ -60,7 +60,7 @@ public class ChannelJo {
     public final void setActive(String value) {
         active.set(value);
     }
-    public StringProperty activeProperty() {
+    public SimpleStringProperty activeProperty() {
         return active;
     }
 
@@ -68,7 +68,7 @@ public class ChannelJo {
     public final void setOutbound(String value) {
         outbound.set(value);
     }
-    public StringProperty outboundProperty() {
+    public SimpleStringProperty outboundProperty() {
         return outbound;
     }
 
@@ -76,7 +76,7 @@ public class ChannelJo {
     public final void setLatency(String value) {
         latency.set(value);
     }
-    public StringProperty latencyProperty() {
+    public SimpleStringProperty latencyProperty() {
         return latency;
     }
 
@@ -84,7 +84,7 @@ public class ChannelJo {
     public final void setDist(String value) {
         dist.set(value);
     }
-    public StringProperty distProperty() {
+    public SimpleStringProperty distProperty() {
         return dist;
     }
 
@@ -92,7 +92,7 @@ public class ChannelJo {
     public final void setLevel(String value) {
         level.set(value);
     }
-    public StringProperty levelProperty() {
+    public SimpleStringProperty levelProperty() {
         return level;
     }
 
@@ -100,7 +100,7 @@ public class ChannelJo {
     public final void setInrate(String value) {
         inrate.set(value);
     }
-    public StringProperty inrateProperty() {
+    public SimpleStringProperty inrateProperty() {
         return inrate;
     }
 
@@ -108,7 +108,7 @@ public class ChannelJo {
     public final void setOutrate(String value) {
         outrate.set(value);
     }
-    public StringProperty outrateProperty() {
+    public SimpleStringProperty outrateProperty() {
         return outrate;
     }
 
@@ -116,7 +116,7 @@ public class ChannelJo {
     public final void setBlock(String value) {
         block.set(value);
     }
-    public StringProperty blockProperty() {
+    public SimpleStringProperty blockProperty() {
         return block;
     }
 
