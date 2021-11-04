@@ -12,7 +12,7 @@ jobs:
 
       - uses: zzvio/setup-graalvm@5.3
         with:
-          graalvm: '21.3.0-dev-20210729_2115'
+          graalvm: '22.0.0-dev-20211029_1932'
           java: java11
 
       - name: Gluon Build
