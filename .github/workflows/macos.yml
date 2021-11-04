@@ -67,8 +67,8 @@ jobs:
       #     name: Package
       #     path: staging
 
-      - name: Upload to Mac store
-        env: 
-          APPSTORE_KEY_ID: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
-          APPSTORE_ISSUER_ID: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
-        run: bash -x src/osx/upload.sh
+      # - name: Upload to Mac store
+      #   env: 
+      #     APPSTORE_KEY_ID: ${{ secrets.GLUON_IOS_APPSTORE_KEY_ID }}
+      #     APPSTORE_ISSUER_ID: ${{ secrets.GLUON_IOS_APPSTORE_ISSUER_ID }}
+      #   run: bash -x src/osx/upload.sh
